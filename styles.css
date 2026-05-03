@@ -1,6 +1,6 @@
 /* body content */
 html {
-    overflow-x: hidden; /* prevents the page from shifting horizontally */
+    overflow-x: hidden;
 }
 
 body { 
@@ -8,29 +8,27 @@ body {
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
-    box-sizing: border-box; /* ensures padding doesn't increase element width */
+    box-sizing: border-box;
 }
 
-/* universal reset to ensure consistent sizing across all elements */
 * {
     box-sizing: border-box;
 }
 
-/* nav bar ------------------------------------------------------------ */
+/* nav bar ----------------------------------------------------------------- */
 .nav-content {
-    padding: 15px 20px;
-    display: flex;  /* aligns logo and items side-by-side */ 
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;  /* push to opposite ends of nav bar */
     align-items: center;
-    gap: 80px;
 }
 
 .nav-items {
     display: flex;
     align-items: center;
-    margin-left: auto;  /* push links & icons to right */
     gap: 80px;
     padding: 0 20px;
-    font-size: 32px; /* standardizes desktop navigation text size */
+    font-size: 32px;
 }
 
 .nav-links {
@@ -47,7 +45,7 @@ body {
 }
 
 .nav-logo { 
-    height: 80px; /* adjusted for clear brand visibility */
+    height: 80px;  /* adjusted for clear brand visibility */
     width: auto;
     display: block;
 }
@@ -98,7 +96,7 @@ nav {
     .nav-items {
         gap: 10px;
         padding: 0 5px;
-        font-size: 14px; /* shrinks text to fit mobile viewports */
+        font-size: 14px;  /* shrinks text to fit mobile viewports */
     }
     
     .nav-items ul {
@@ -124,11 +122,118 @@ nav {
     padding: 0;
     position: sticky;
     top: 0px;
-    z-index: -1000; /* keeps hero image behind the navigation wave */
+    z-index: -1000;  /* keeps hero image behind the navigation wave */
 }
 
 .hero-image {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* search page ------------------------------------------------------------- */
+.search-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* vertical card list */
+.product-grid {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+    padding: 40px;
+}
+
+/* mobile: carousel */
+@media (max-width: 430px) {
+    .product-grid {
+        flex-direction: row; /* side-by-side for swiping */
+        overflow-x: auto; /* horizontal scroll */
+        scroll-snap-type: x mandatory;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .product-card {
+        min-width: 85vw; /* takes up most of screen width */
+        flex-direction: column; /* put image on top of text for carousel */
+        scroll-snap-align: center;
+        padding: 15px;
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 180px; /* a litte shorter for mobile */
+    }
+
+    /* hide scrollbar (minimalist) */
+    .product-grid::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* horizontal card layout */
+.product-card {
+    background-color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: row; /* image on left, text on right */
+    gap: 20px;
+    box-shadow: -6px 6px 6px #C7C7C7; /* light drop shadow */
+    position: relative;
+}
+
+.product-card img {
+    width: 250px; /* FIXED width */
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-title {
+    color: #5BD7A9;
+    margin: 0;
+}
+
+.product-price {
+    color: #5BD7A9;
+    font-size: 24px;
+}
+
+.product-details {
+    color: #4A4A4A;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+/* quick add cart button */
+.add-cart-button {
+    background-color: #5BD7A9;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 4px #C7C7C7;
+}
+
+.add-cart-button img {
+    width: 25px;
+    height: 25px;
 }
