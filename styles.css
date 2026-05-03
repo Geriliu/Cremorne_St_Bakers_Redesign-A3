@@ -1,14 +1,24 @@
 /* body content */
+html {
+    overflow-x: hidden; /* prevents the page from shifting horizontally */
+}
+
 body { 
     margin: 0;
     padding: 0;
     max-width: 100%;
-    overflow-x: hidden;  /* no accidental scrolling horizontally */
+    overflow-x: hidden;
+    box-sizing: border-box; /* ensures padding doesn't increase element width */
+}
+
+/* universal reset to ensure consistent sizing across all elements */
+* {
+    box-sizing: border-box;
 }
 
 /* nav bar ------------------------------------------------------------ */
 .nav-content {
-    padding: 20px 20px;
+    padding: 15px 20px;
     display: flex;  /* aligns logo and items side-by-side */ 
     align-items: center;
     gap: 80px;
@@ -19,7 +29,8 @@ body {
     align-items: center;
     margin-left: auto;  /* push links & icons to right */
     gap: 80px;
-    padding: 0 80px;
+    padding: 0 20px;
+    font-size: 32px; /* standardizes desktop navigation text size */
 }
 
 .nav-links {
@@ -28,7 +39,7 @@ body {
 
 .nav-items ul {
     display: flex;
-    gap: 60px;
+    gap: 80px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -36,27 +47,27 @@ body {
 }
 
 .nav-logo { 
-    height: 60px;
+    height: 80px; /* adjusted for clear brand visibility */
     width: auto;
     display: block;
 }
 
 .nav-icons {
     display: flex;
-    gap: 60px;
+    gap: 80px;
     align-items: center;
 }
 
 .nav-icon img {
-    height: 37px;
+    height: 45px;
     width: auto;
 }
 
 /* nav wave background img */
 nav {
     background-image: url('assets/images/nav-background-wave.svg'); /* wave img */
-    background-size: 100% 120%;
-    background-position: center bottom;
+    background-size: 100% 150%;
+    background-position: center -50px;
     background-repeat: no-repeat;
     min-height: 170px;
     width: 100%;
@@ -68,7 +79,7 @@ nav {
     margin: 0; /* no default margin */
 }
 
-/* responsive for mobile */
+/* responsive nav for mobile ------------------------------------------- */
 @media (max-width: 430px) {
     nav {
         background-size: 100% 100%;
@@ -85,16 +96,17 @@ nav {
     }
     
     .nav-items {
-        gap: 8px;
+        gap: 10px;
         padding: 0 5px;
+        font-size: 14px; /* shrinks text to fit mobile viewports */
     }
     
     .nav-items ul {
-        gap: 8px;
+        gap: 10px;
     }
     
     .nav-icons {
-        gap: 8px;
+        gap: 10px;
     }
     
     .nav-icon img {
@@ -102,7 +114,7 @@ nav {
     }
 }
 
-/* hero image section */
+/* hero image section -------------------------------------------------- */
 .hero {
     width: 100%;
     display: flex;
@@ -112,7 +124,7 @@ nav {
     padding: 0;
     position: sticky;
     top: 0px;
-    z-index: -1000;
+    z-index: -1000; /* keeps hero image behind the navigation wave */
 }
 
 .hero-image {

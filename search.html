@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="colours.css">
     <link rel="stylesheet" href="styles.css">
-    <title>All Products | Cremorne Street Bakers</title>
+    <title>Search | Cremorne Street Bakers</title>
 </head>
 
-<body>
+<body class="search-body">
     <nav>
         <div class="nav-content">
             <a href="home.html"><img src="assets/images/CSB.svg" alt="Cremorne Street Bakers Logo" class="nav-logo"></a>
@@ -30,8 +30,30 @@
         </div>
     </nav>
 
-    <h1>Search</h1>
-    <p>Placeholder</p>
+    <main class="search-main">
+        <section class="search-hero">
+            <div class="search-box">
+                <input id="searchInput" type="text" placeholder="Cake toppers">
+                <button id="searchButton" aria-label="Search">
+                    <img src="assets/icons/search-nav-icon.svg" alt="Search">
+                </button>
+            </div>
+
+            <div class="search-filters">
+                <button class="filter-pill">Price <span>▼</span></button>
+                <button class="filter-pill active">In Stock</button>
+                <button class="filter-pill">G-Free</button>
+                <button class="filter-pill">Event <span>▼</span></button>
+            </div>
+        </section>
+
+        <section class="product-preview">
+            <h2>A peek at our bestsellers...</h2>
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
