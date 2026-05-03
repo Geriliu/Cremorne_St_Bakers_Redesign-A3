@@ -1,26 +1,53 @@
+/* body content */
 body { 
     margin: 0;
     padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;  /* no accidental scrolling horizontally */
 }
 
-
+/* nav bar */
 .nav-content {
     padding: 20px 20px;
-    /* placeholder - where logo might start */
+    display: flex;  /* aligns logo and items side-by-side */ 
+    align-items: center;
+    gap: 80px;
 }
 
-/* Ensure the nav has no background color */
-nav {
-    background-color: transparent;
+.nav-items {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 80px;
+    padding: 0 80px;
 }
 
-.wave-container {
-    width: 100%;
-    line-height: 0;
+.nav-links {
+    display: flex;
 }
 
-.wave-container svg {
-    display: block;
-    width: 100%;
+.nav-items ul {
+    display: flex;
+    gap: 80px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-logo { 
     height: 60px;
+    width: auto;
+    display: block;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+.nav-icon img {
+    height: 37px;
+    width: auto;
 }

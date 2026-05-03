@@ -12,3 +12,8 @@ nav {
 .nav-content {
     background-color: #4A4A4A; /* top part of nav */
 }
+
+nav a { 
+    color: #5BD7A9; 
+    text-decoration: none; /* no underline */
+}
