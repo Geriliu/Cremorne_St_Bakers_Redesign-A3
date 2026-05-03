@@ -3,12 +3,7 @@ body {
 }
 
 
-/* nav bar color */
-nav {
-    background-color: #4A4A4A;
-    color: white; /* for the text colour in the navbar */
-}
-
+/* nav bar ------------------------------------------------------------ */
 .nav-content {
     background-color: #4A4A4A; /* top part of nav */
 }

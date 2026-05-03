@@ -6,7 +6,7 @@ body {
     overflow-x: hidden;  /* no accidental scrolling horizontally */
 }
 
-/* nav bar */
+/* nav bar ------------------------------------------------------------ */
 .nav-content {
     padding: 20px 20px;
     display: flex;  /* aligns logo and items side-by-side */ 
@@ -28,7 +28,7 @@ body {
 
 .nav-items ul {
     display: flex;
-    gap: 80px;
+    gap: 60px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -43,11 +43,80 @@ body {
 
 .nav-icons {
     display: flex;
-    gap: 80px;
+    gap: 60px;
     align-items: center;
 }
 
 .nav-icon img {
     height: 37px;
     width: auto;
+}
+
+/* nav wave background img */
+nav {
+    background-image: url('assets/images/nav-background-wave.svg'); /* wave img */
+    background-size: 100% 120%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    min-height: 170px;
+    width: 100%;
+    box-sizing: border-box;
+    position: sticky; /* nav sticky to top of page when scrolling */
+    top: 0px; /* starts at top of screen */
+    z-index: 1000;
+    padding: 0; /* no default padding */
+    margin: 0; /* no default margin */
+}
+
+/* responsive for mobile */
+@media (max-width: 430px) {
+    nav {
+        background-size: 100% 100%;
+        background-position: center;
+    }
+    
+    .nav-content {
+        gap: 10px;
+        padding: 10px 10px;
+    }
+    
+    .nav-logo {
+        height: 40px;
+    }
+    
+    .nav-items {
+        gap: 8px;
+        padding: 0 5px;
+    }
+    
+    .nav-items ul {
+        gap: 8px;
+    }
+    
+    .nav-icons {
+        gap: 8px;
+    }
+    
+    .nav-icon img {
+        height: 30px;
+    }
+}
+
+/* hero image section */
+.hero {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    top: 0px;
+    z-index: -1000;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
