@@ -41,7 +41,7 @@ function renderProducts(items) {
             <p class="product-description">${product.description}</p>
             <button class="add-cart-button">Add to cart</button>
         </article>
-    `).join('');  // removes commas 
+    `).join('');  // removes commas; combines into HTML as 1 string
 }
 
 /* render function when HTML is fully loaded
