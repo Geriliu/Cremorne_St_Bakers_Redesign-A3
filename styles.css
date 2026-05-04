@@ -8,11 +8,10 @@ body {
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
-    box-sizing: border-box;
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* universal reset ensures padding doesn't break layout */
 }
 
 /* nav bar ----------------------------------------------------------------- */
@@ -69,12 +68,11 @@ nav {
     background-repeat: no-repeat;
     min-height: 170px;
     width: 100%;
-    box-sizing: border-box;
     position: sticky; /* nav sticky to top of page when scrolling */
     top: 0px; /* starts at top of screen */
     z-index: 1000;
-    padding: 0; /* no default padding */
-    margin: 0; /* no default margin */
+    padding: 0;
+    margin: 0;
 }
 
 /* responsive nav for mobile ------------------------------------------- */
@@ -96,7 +94,7 @@ nav {
     .nav-items {
         gap: 10px;
         padding: 0 5px;
-        font-size: 14px;  /* shrinks text to fit mobile viewports */
+        font-size: 14px;
     }
     
     .nav-items ul {
@@ -122,7 +120,7 @@ nav {
     padding: 0;
     position: sticky;
     top: 0px;
-    z-index: -1000;  /* keeps hero image behind the navigation wave */
+    z-index: -1000;
 }
 
 .hero-image {
@@ -138,7 +136,7 @@ nav {
     padding: 20px;
 }
 
-/* vertical card list */
+/* standard search results grid (vertical) */
 .product-grid {
     display: flex;
     flex-direction: column; 
@@ -146,48 +144,38 @@ nav {
     padding: 40px;
 }
 
-/* mobile: carousel */
-@media (max-width: 430px) {
-    .product-grid {
-        flex-direction: row; /* side-by-side for swiping */
-        overflow-x: auto; /* horizontal scroll */
-        scroll-snap-type: x mandatory;
-        padding: 20px;
-        gap: 15px;
-    }
-
-    .product-card {
-        min-width: 85vw; /* takes up most of screen width */
-        flex-direction: column; /* put image on top of text for carousel */
-        scroll-snap-align: center;
-        padding: 15px;
-    }
-
-    .product-card img {
-        width: 100%;
-        height: 180px; /* a litte shorter for mobile */
-    }
-
-    /* hide scrollbar (minimalist) */
-    .product-grid::-webkit-scrollbar {
-        display: none;
-    }
+/* carousel container (horizontal) -------------------------------------- */
+.carousel {
+    width: 100%;
+    overflow-x: auto; /* allows horizontal scrolling */
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch; 
 }
 
-/* horizontal card layout */
+.product-carousel {
+    display: flex; /* puts cards in a row */
+    gap: 20px;
+    padding: 0 20px;
+    scroll-snap-type: x mandatory;
+}
+
+/* horizontal card layout (Matches Screenshot) */
 .product-card {
     background-color: #FFFFFF;
     padding: 20px;
     display: flex;
-    flex-direction: row; /* image on left, text on right */
+    flex-direction: row; /* image on left, text on right - matches screenshot */
     gap: 20px;
-    box-shadow: -6px 6px 6px #C7C7C7; /* light drop shadow */
+    box-shadow: -6px 6px 6px #C7C7C7;
     position: relative;
+    flex: 0 0 90%; /* card takes up most of width while showing next card */
+    scroll-snap-align: center;
 }
 
 .product-card img {
-    width: 250px; /* FIXED width */
-    height: 250px;
+    width: 40%; /* adjusted to leave room for text side-by-side */
+    height: auto;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
 }
 
@@ -233,7 +221,20 @@ nav {
     box-shadow: 0 4px 4px #C7C7C7;
 }
 
-.add-cart-button img {
-    width: 25px;
-    height: 25px;
+/* mobile: carousel refinements ---------------------------------------- */
+@media (max-width: 430px) {
+    .product-carousel {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    /* hide scrollbar */
+    .carousel::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .product-card {
+        padding: 15px;
+        gap: 15px;
+    }
 }
