@@ -9,7 +9,7 @@
     <title> Bakers Melbourne | Wholesale Bakery | Gourmet Cakes Supplier - Cremorne Street Bakers </title>
 </head>
 
-<body>
+<body class="home-page">
     <nav>
         <div class="nav-content">
             <!-- logo is different alignment from other nav items, so separated -->
@@ -34,12 +34,46 @@
         
     </nav>
     
-    <section class="hero">
+    <!-- <section class="hero">
         <img src="assets/images/home-hero.svg" alt="Cremorne Street Bakers Hero" class="hero-image">
-    </section>
+    </section> -->
     
-    <h1> Header</h1>
-    <p> vParagraph</p>
+    <main>
+        <section class="home-hero-wrap" aria-label="Featured">
+            <div class="home-hero-inner">
+                <div class="home-hero-headline">
+                    <h1>Everyone wants a slice of Delicious</h1>
+                    <a class="btn-pink" href="search.html?q=cake">Shop now <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cremie-panel" id="cremie" aria-label="Cremie, your GenAI assistant">
+            <img src="assets/icons/just-cremie.svg" width="400" height="200" alt="Cremie assistant">
+
+            <div class="cremie-card">
+                <div class="cremie-pills">
+                    <button type="button" class="cremie-pill" data-cremie-pill="berry">Something with berry</button>
+                    <button type="button" class="cremie-pill" data-cremie-pill="bestsellers">Bestselling cakes</button>
+                    <button type="button" class="cremie-pill" data-cremie-pill="decorations">Decorations</button>
+                </div>
+
+                <!-- currently nothing happens onclick -->
+                <form class="cremie-form" id="cremieForm" method="get">  
+                    <label for="cremieInput" class="visually-hidden">Ask Cremie</label>
+                    <input class="cremie-input" id="cremieInput" name="q" type="search" placeholder="Something with berry?" autocomplete="off">
+                    <button type="submit" class="cremie-send" aria-label="Send">
+                        <!-- placeholder - haven't imported button yet -->
+                    </button>
+                </form>
+
+                <div class="cremie-reply cremie-reply--hidden" id="cremieReply" role="status"></div>
+            </div>
+        </section>
+    </main>
+
+
+
     <script src="script.js"></script>
 </body>
 </html>
