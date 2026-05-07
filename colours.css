@@ -12,3 +12,24 @@ nav a {
     color: #5BD7A9; 
     text-decoration: none; /* no underline */
 }
+
+/* search ------------------------------------------------------------ */
+.product-card {
+    background-color: #FFFFFF;
+}
+
+.product-title {
+    color: #5BD7A9;
+}
+
+.product-price {
+    color: #5BD7A9;
+}
+
+.product-details {
+    color: #4A4A4A;
+}
+
+.add-cart-button {
+    background: none;
+}

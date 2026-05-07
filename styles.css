@@ -11,7 +11,7 @@ body {
 }
 
 * {
-    box-sizing: border-box; /* universal reset ensures padding doesn't break layout */
+    box-sizing: border-box; /* reset so padding doesn't break layout */
 }
 
 /* nav bar ----------------------------------------------------------------- */
@@ -144,41 +144,27 @@ nav {
     padding: 40px;
 }
 
-/* carousel container (horizontal) -------------------------------------- */
-.carousel {
-    width: 100%;
-    overflow-x: auto; /* allows horizontal scrolling */
-    padding: 20px 0;
-    -webkit-overflow-scrolling: touch; 
-}
-
-.product-carousel {
-    display: flex; /* puts cards in a row */
-    gap: 20px;
-    padding: 0 20px;
-    scroll-snap-type: x mandatory;
-}
-
-/* horizontal card layout (Matches Screenshot) */
+/* horizontal card layout */ 
 .product-card {
-    background-color: #FFFFFF;
     padding: 20px;
     display: flex;
-    flex-direction: row; /* image on left, text on right - matches screenshot */
+    flex-direction: row; /* image on left, text on right */
     gap: 20px;
     box-shadow: -6px 6px 6px #C7C7C7;
     position: relative;
     flex: 0 0 90%; /* card takes up most of width while showing next card */
     scroll-snap-align: center;
+    border-radius: 8px;
 }
 
 .product-card img {
-    width: 40%; /* adjusted to leave room for text side-by-side */
+    width: 40%; 
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
 
+/* contain text separately from img */
 .product-info {
     flex: 1;
     display: flex;
@@ -192,33 +178,36 @@ nav {
 }
 
 .product-title {
-    color: #5BD7A9;
     margin: 0;
 }
 
 .product-price {
-    color: #5BD7A9;
     font-size: 24px;
 }
 
 .product-details {
-    color: #4A4A4A;
     font-size: 14px;
     margin-top: auto;
 }
 
-/* quick add cart button */
+/* quick add to cart button - invisible container */
 .add-cart-button {
-    background-color: #5BD7A9;
     border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    padding: 0;
+    margin: 0;
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 15px;
+    right: 15px;
     cursor: pointer;
-    box-shadow: 0 4px 4px #C7C7C7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-cart-button img {
+    width: 35px !important; /* previous general rule that all imgs in .product-card are stretched to 40% - not this one */
+    height: 35px !important;
+    object-fit: contain;
 }
 
 /* mobile: carousel refinements ---------------------------------------- */
@@ -226,6 +215,13 @@ nav {
     .product-card {
         padding: 15px;
         gap: 15px;
+        flex: 0 0 95%;  /* gives enough room (95% of width) for a card */
+        flex-direction: row;
+        scroll-snap-align: center;  /* snaps card to centre of screen while scrolling */
+    }
+
+    .product-card img { 
+        width: 40%; /* there is also text on card, img can't take up too much space */
     }
 
     .product-grid {  

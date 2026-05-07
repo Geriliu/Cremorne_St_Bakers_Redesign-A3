@@ -28,20 +28,23 @@ const products = [
 */
 function renderProducts(items) {
     const productGrid = document.getElementById('productGrid');
-    if (!productGrid) return;  // check - in case function is on a page without the product grid
+    if (!productGrid) return; 
 
-    // product data joined into string 
     productGrid.innerHTML = items.map(product => `
         <article class="product-card">
             <img src="${product.image}" alt="${product.name}">
-            <div class="product-header">
-                <h3 class="product-title">${product.name}</h3>
-                <div class="product-price">$${product.price}</div>
+            <div class="product-info">
+                <div class="product-header">
+                    <h3 class="product-title">${product.name}</h3>
+                    <div class="product-price">$${product.price}</div>
+                </div>
+                <p class="product-description">${product.description}</p>
+                <button class="add-cart-button" aria-label="Add to cart">
+                    <img src="assets/icons/add-to-cart.svg" alt="">
+                </button>
             </div>
-            <p class="product-description">${product.description}</p>
-            <button class="add-cart-button">Add to cart</button>
         </article>
-    `).join('');  // removes commas; combines into HTML as 1 string
+    `).join(''); 
 }
 
 /* render function when HTML is fully loaded
