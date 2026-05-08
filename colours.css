@@ -26,8 +26,12 @@ nav a {
     color: #5BD7A9;
 }
 
-.product-details {
+.product-details, .product-description {
     color: #4A4A4A;
+}
+
+.product-ingredients { 
+    color: #828282;
 }
 
 .add-cart-button {

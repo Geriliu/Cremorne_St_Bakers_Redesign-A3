@@ -5,20 +5,20 @@ const products = [
     {
         id: 1,
         name: 'Anzac Biscuits',
-        image: 'assets/images/home-hero.svg',
+        image: 'assets/images/anzac-biscuit-square.png',
         price: 40,
         subtitle: '8pcs',
         description: 'Golden, crunchy oat biscuits made with sweet coconut and a touch of golden syrup.',
-        details: ['Contains: Butter (Dairy), Oats, Flour (Gluten), Coconut, Golden Syrup, and Sugar.']
+        ingredients: ['Contains: Butter (Dairy), Oats, Flour (Gluten), Coconut, Golden Syrup, and Sugar.']
     },
     {
         id: 2,
         name: 'Elderflower & Lemon Curd Cake',
-        image: 'assets/images/home-hero.svg',
+        image: 'assets/images/elderflower-square.png',
         price: 60,
         subtitle: '8”',
         description: 'Old-fashioned elderflower pound cake with lemon curd glaze, buttercream, and blue cornflowers.',
-        details: ['Contains: Butter (Dairy), Flour (Gluten), Eggs, Yoghurt, Almonds (Nuts), and Milk.'],
+        ingredients: ['Contains: Butter (Dairy), Flour (Gluten), Eggs, Yoghurt, Almonds (Nuts), and Milk.'],
         sizes: ['5”', '8”', '10”']
     }
 ];
@@ -39,6 +39,7 @@ function renderProducts(items) {
                     <div class="product-price">$${product.price}</div>
                 </div>
                 <p class="product-description">${product.description}</p>
+                <p class="product-ingredients">${product.ingredients}</p>
                 <button class="add-cart-button" aria-label="Add to cart">
                     <img src="assets/icons/add-to-cart.svg" alt="">
                 </button>
