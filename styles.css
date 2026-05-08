@@ -3,16 +3,24 @@ html {
     overflow-x: hidden;
 }
 
+h1, h2, h3, .product-title, .product-price {
+    font-family: 'Playfair Display', serif !important;
+    letter-spacing: 0.5px;
+}
+
 body { 
     margin: 0;
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;  /* currently not changing anything, not sure why --------------------- */
 }
 
 * {
     box-sizing: border-box; /* reset so padding doesn't break layout */
 }
+
 
 /* nav bar ----------------------------------------------------------------- */
 .nav-content {
@@ -174,7 +182,17 @@ nav {
 .product-header {
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid #4a4a4a;
     align-items: center;
+    margin-top: 5px;
+}
+
+.product-description { 
+    border-top: 1px solid #4a4a4a;
+    padding-top: 10px; 
+    margin-top: 10px;
+    line-height: 1.4;
+    font-size: 15px;
 }
 
 .product-title {
