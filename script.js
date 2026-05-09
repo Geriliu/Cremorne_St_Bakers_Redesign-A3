@@ -122,6 +122,54 @@ const toppers = [
         ingredients: ''
     }
 ]
+
+const allProducts = [...cakes, ...liteBites, ...toppers];  // for searching everything at once
+
+function search() {
+    const searchInput = document.getElementById('searchInput');
+    const searchTerm = searchInput.value.toLowerCase().trim();
+
+    // filter `allProducts` list for searched item
+    const filteredResults = allProducts.filter(product => {
+        return product.name.toLowerCase().includes(searchTerm) || 
+               product.description.toLowerCase().includes(searchTerm);
+    });
+
+    // show results in first grid
+    const cakesGrid = document.getElementById('cakesGrid');
+    const bitesGrid = document.getElementById('bitesGrid');
+    const toppersGrid = document.getElementById('toppersGrid');
+
+    if (searchTerm === "") {
+        // if search empty, nothing changes (render normally )
+        renderProducts(cakes, 'cakesGrid');
+        renderProducts(liteBites, 'bitesGrid');
+        renderProducts(toppers, 'toppersGrid');
+        // visible headers
+        document.querySelectorAll('.product-preview h3').forEach(h3 => h3.style.display = 'block');
+    } else {
+        // if there is a search, hide headers and list results in one grid
+        document.querySelectorAll('.product-preview h3').forEach(h3 => h3.style.display = 'none');
+        // clear last 2 grids
+        bitesGrid.innerHTML = "";
+        toppersGrid.innerHTML = "";
+        // render into first grid - just so happens to be the `cakesGrid`
+        renderProducts(filteredResults, 'cakesGrid');
+    }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    // first render
+    renderProducts(cakes, 'cakesGrid');
+    renderProducts(liteBites, 'bitesGrid');
+    renderProducts(toppers, 'toppersGrid');
+
+    // searcg input listener
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', search);
+});
+
+
 /* puts product data into HTML grid 
     targets #productGrid element 
 */
