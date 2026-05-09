@@ -14,7 +14,7 @@ h1, h2, h3, .product-title, .product-price {
 }
 
 body { 
-    margin: 0;
+    margin: 0px 0px 100px 0px;
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
