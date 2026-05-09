@@ -2,7 +2,9 @@ body {
     background-color: #F1E9D2;
 }
 
-
+h1, h2, h3 { 
+    color: #4A4A4A;
+}
 /* nav bar ------------------------------------------------------------ */
 .nav-content {
     background-color: #4A4A4A; /* top part of nav */

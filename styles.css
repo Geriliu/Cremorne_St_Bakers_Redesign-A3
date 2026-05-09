@@ -175,7 +175,10 @@ nav {
 }
 
 .product-ingredients { 
-    width: 80%;
+    width: 90%;
+    margin-top: 5px;
+    line-height: 1.3;
+    font-size: 11px;
 }
 
 /* contain text separately from img */
@@ -200,7 +203,7 @@ nav {
     padding-top: 5px;;
 }
 
-.product-description, .product-ingredients { 
+.product-description { 
     border-top: 0.5px solid #8d8d8d;
     padding-top: 5px; 
     margin-top: 5px;
@@ -243,6 +246,22 @@ nav {
     height: 35px !important;
     object-fit: contain;
 }
+
+.product-sizes {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+    margin: 5px 0;
+}
+
+.product-sizes span {
+    border: 1px solid #8d8d8d;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-family: 'Source Sans 3', sans-serif;
+    color: #4a4a4a;
+}
+
 
 /* mobile: carousel refinements ---------------------------------------- */
 @media (max-width: 430px) {    
