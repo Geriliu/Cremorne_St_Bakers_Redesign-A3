@@ -193,28 +193,46 @@ function renderProducts(items, targetID) {
             : `<div class="product-subtitle">${product.subtitle}</div>`;
         return `
 
-        <article class="product-card">
+        <article class="product-card" onclick="location.href='product_detail.html?id=${product.id}'" style="cursor: pointer;">
             <img src="${product.image}" alt="${product.name}">
-            
+
             <div class="product-info">
                 <div class="product-header">
                     <h3 class="product-title">${product.name}</h3>
                     <div class="product-price">$${product.price}</div>
                 </div>
-                
+
                 ${detailRow}
 
                 <p class="product-description">${product.description}</p>
-                
+
                 ${items !== toppers ? `<p class="product-ingredients">Contains: ${product.ingredients}</p>` : ''}
-                
-                <button class="add-cart-button" aria-label="Add to cart">
+
+                <button class="add-cart-button" aria-label="Add to cart" onclick="event.stopPropagation(); handleQuickAdd(${product.id})">
                     <img src="assets/icons/add-to-cart.svg" alt="">
                 </button>
             </div>
         </article>
         `;
     }).join(''); 
+}
+
+function handleQuickAdd(productId) {
+    // find product in array
+    const product = [...cakes, ...liteBites, ...toppers].find(p => p.id === productId);
+    
+    // "quick add" will add smallest size (defaults to subtitle if "sizes" array don't exist)
+    const selectedSize = product.sizes ? product.sizes[0] : product.subtitle;
+    
+    // notification (placeholder)
+    console.log(`Added ${product.name} (${selectedSize}) to cart.`);
+    
+    /* need to: 
+    - update cart number 
+    - show green notification instead of console.log 
+    - animation of notification
+    */
+    alert(`${product.name} added to cart!`);
 }
 
 /* render function when HTML is fully loaded
