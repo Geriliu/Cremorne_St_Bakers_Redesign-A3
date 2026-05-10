@@ -37,20 +37,50 @@
         </div>
     </nav>
 
-    <div class="announcement-bar">Shipping available up to 20 kms from our Cremorne bakery.</div>
+    <main class="detail-main">
+        <a href="search.html" class="back-link"><img src="assets/icons/back-arrow.svg" alt="Go back"></a>
 
-    <main class="product-page">
-        <div class="back-row">
-            <a href="search.html">Back</a>
+        <div class="shipping-banner">
+            Shipping available up to 20 kms from our Cremorne bakery
         </div>
-        <div id="productPageRoot"></div>
+
+        <section class="detail-images">
+            <img id="mainImage" src="" alt="">
+        </section>
+
+        <section class="detail-info">
+            <div class="title-row">
+                <h1 id="productName"></h1>
+                <span id="productPrice"></span>
+            </div>
+
+            <p id="productDescription"></p>
+
+            <div class="selector-row">
+                <label>SIZE</label>
+                <div class="size-options" id="sizeOptions">
+                    </div>
+                <span id="servingsNote" class="light-text"></span>
+            </div>
+
+            <div class="selector-row">
+                <label>QTY</label>
+                <div class="qty-stepper">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+            </div>
+
+            <button class="full-add-button"><img src="assets/icons/full-add-to-cart-button.svg"></button>
+
+            <hr>
+
+            <div class="detail-footer">
+                <p><strong>Contains:</strong> <span id="ingredientsList"></span></p>
+            </div>
+        </section>
     </main>
-
-    <a href="home.html#cremie" class="cremie-fab" aria-label="Ask Cremie">
-        <img src="assets/icons/search-nav-icon.svg" alt="">
-    </a>
-
     <script src="script.js"></script>
 </body>
-
 </html>
