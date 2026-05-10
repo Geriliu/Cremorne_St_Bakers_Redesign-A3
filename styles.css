@@ -265,7 +265,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;  /* double check it stays on top layer */
+    z-index: 20;  /* double check it stays on top layer */
 }
 
 .add-cart-button img {
@@ -344,6 +344,13 @@ nav {
         height: 250px; /* bigger height to fit larger text/images */
         padding: 25px;
         gap: 25px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* card will pop out! */
+    .product-card:hover {
+        transform: translateY(-8px); /* slightly larger lift for the larger desktop cards */
+        box-shadow: -12px 12px 20px rgba(0, 0, 0, 0.15);
     }
 
     .product-title {
