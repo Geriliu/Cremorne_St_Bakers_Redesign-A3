@@ -125,51 +125,6 @@ const toppers = [
 
 const allProducts = [...cakes, ...liteBites, ...toppers];  // for searching everything at once
 
-function search() {
-    const searchInput = document.getElementById('searchInput');
-    const searchTerm = searchInput.value.toLowerCase().trim();
-
-    // filter `allProducts` list for searched item
-    const filteredResults = allProducts.filter(product => {
-        return product.name.toLowerCase().includes(searchTerm) || 
-               product.description.toLowerCase().includes(searchTerm);
-    });
-
-    // show results in first grid
-    const cakesGrid = document.getElementById('cakesGrid');
-    const bitesGrid = document.getElementById('bitesGrid');
-    const toppersGrid = document.getElementById('toppersGrid');
-
-    if (searchTerm === "") {
-        // if search empty, nothing changes (render normally )
-        renderProducts(cakes, 'cakesGrid');
-        renderProducts(liteBites, 'bitesGrid');
-        renderProducts(toppers, 'toppersGrid');
-        // visible headers
-        document.querySelectorAll('.product-preview h3').forEach(h3 => h3.style.display = 'block');
-    } else {
-        // if there is a search, hide headers and list results in one grid
-        document.querySelectorAll('.product-preview h3').forEach(h3 => h3.style.display = 'none');
-        // clear last 2 grids
-        bitesGrid.innerHTML = "";
-        toppersGrid.innerHTML = "";
-        // render into first grid - just so happens to be the `cakesGrid`
-        renderProducts(filteredResults, 'cakesGrid');
-    }
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    // first render
-    renderProducts(cakes, 'cakesGrid');
-    renderProducts(liteBites, 'bitesGrid');
-    renderProducts(toppers, 'toppersGrid');
-
-    // searcg input listener
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', search);
-});
-
-
 /* puts product data into HTML grid 
     targets #productGrid element 
 */
@@ -206,7 +161,7 @@ function renderProducts(items, targetID) {
 
                 <p class="product-description">${product.description}</p>
 
-                ${items !== toppers ? `<p class="product-ingredients">Contains: ${product.ingredients}</p>` : ''}
+                ${product.ingredients ? `<p class="product-ingredients">Contains: ${product.ingredients}</p>` : ''}
 
                 <button class="add-cart-button" aria-label="Add to cart" onclick="event.stopPropagation(); handleQuickAdd(${product.id})">
                     <img src="assets/icons/add-to-cart.svg" alt="">
@@ -216,6 +171,80 @@ function renderProducts(items, targetID) {
         `;
     }).join(''); 
 }
+
+function search() {
+    const searchInput = document.getElementById('searchInput');
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    // define the "a peek at our bestsellers" because this'll change as user searches
+    const mainHeader = document.querySelector('.product-preview h2');
+
+    // show results in first grid
+    const cakesGrid = document.getElementById('cakesGrid');
+    const bitesGrid = document.getElementById('bitesGrid');
+    const toppersGrid = document.getElementById('toppersGrid');
+
+    if (searchTerm === "") {
+        // if search empty, nothing changes (render normally )
+        mainHeader.textContent = "A peek at our bestsellers...";
+        document.querySelectorAll('.product-preview h3').forEach(h3 => h3.style.display = 'block');
+
+        // remove class, restore carousels
+        cakesGrid.classList.remove('search-mode');
+
+        renderProducts(cakes, 'cakesGrid');
+        renderProducts(liteBites, 'bitesGrid');
+        renderProducts(toppers, 'toppersGrid');
+        
+    } else {
+        // if there is a search, hide headers and list results in one grid
+
+        // change main header
+        mainHeader.textContent = "Search results";  
+
+        document.querySelectorAll('.product-preview h3').forEach(h3 => h3.style.display = 'none');
+
+        // filter `allProducts` list for searched item
+        const filteredResults = allProducts.filter(product => {
+            return product.name.toLowerCase().includes(searchTerm) || 
+                   product.description.toLowerCase().includes(searchTerm);
+        });
+
+        // clear last 2 grids
+        bitesGrid.innerHTML = "";
+        toppersGrid.innerHTML = "";
+
+        // Add class to force vertical layout
+        cakesGrid.classList.add('search-mode');
+
+        // render into first grid - just so happens to be the `cakesGrid`
+        renderProducts(filteredResults, 'cakesGrid');
+    }
+
+};
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    // first render
+    renderProducts(cakes, 'cakesGrid');
+    renderProducts(liteBites, 'bitesGrid');
+    renderProducts(toppers, 'toppersGrid');
+
+    // searcg input listener
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+
+    // on typing
+    searchInput.addEventListener('input', search);
+
+    // on clicking the search button
+    searchButton.addEventListener('click', search);
+    
+    // if user press keyboard ENTER
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') search();
+    });
+});
+
 
 function handleQuickAdd(productId) {
     // find product in array
@@ -234,12 +263,3 @@ function handleQuickAdd(productId) {
     */
     alert(`${product.name} added to cart!`);
 }
-
-/* render function when HTML is fully loaded
-    because DOM elements need to be present 
-*/
-window.addEventListener('DOMContentLoaded', () => {
-    renderProducts(cakes, 'cakesGrid');
-    renderProducts(liteBites, 'bitesGrid');
-    renderProducts(toppers, 'toppersGrid');
-});

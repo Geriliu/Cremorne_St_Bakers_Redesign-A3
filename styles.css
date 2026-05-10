@@ -293,6 +293,20 @@ nav {
     margin-bottom: 0;
 }
 
+/* when searching.... */
+/* the grid stacks cards vertically instead of scrollinmg carousel */
+.search-main .product-grid.search-mode {
+    flex-direction: column;
+    overflow-x: hidden;
+    scroll-snap-type: none;
+    display: flex;
+    gap: 20px;
+}
+.search-main .product-grid.search-mode .product-card {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
 
 /* desktop ---------------------------------------- */
 @media (min-width: 1024px) {    
