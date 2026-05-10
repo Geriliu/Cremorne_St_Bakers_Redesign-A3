@@ -329,6 +329,7 @@ nav {
 }
 
 #productName {
+    display: inline-block;
     padding: 5px 15px;
     margin: 0;
 }
@@ -336,23 +337,35 @@ nav {
 .title-row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .selector-row {
+    display: flex;
+    align-items: center;
     gap: 15px;
     margin: 15px 0;
 }
 
 .size-options span {
+    border: 1px solid #ccc;
     padding: 5px 12px;
+    cursor: pointer;
 }
 
 .full-add-button {
+    background: none;
+    border: none;
+    padding: 0;
+    width: 100%;
     margin: 20px 0;
 }
 
 .full-add-button img {
+    width: 40%;
 }
+
 /* ALL DESKTOP ---------------------------------------- */
 @media (min-width: 1024px) {    
     /* nav bar */

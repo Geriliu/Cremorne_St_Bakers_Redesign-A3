@@ -272,7 +272,19 @@ if (window.location.pathname.includes('product_detail.html')) {
         const productId = parseInt(urlParams.get('id'));
 
         // find products in array
+        const product = allProducts.find(p => p.id === productId);
+
         // fill in with images
-        // render sizes & qty
+        // ensure it's matching the product with ID first
+        if (product) {
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productPrice').textContent = `$${product.price}`;
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('mainImage').src = product.image;
+            document.getElementById('ingredientsList').textContent = product.ingredients;
+
+            // render sizes & qty
+            const sizeContainer = document.getElementById('sizeOptions');
+        } 
     });
 }
