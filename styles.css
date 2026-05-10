@@ -328,7 +328,31 @@ nav {
     padding: 20px;
 }
 
+#productName {
+    padding: 5px 15px;
+    margin: 0;
+}
 
+.title-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.selector-row {
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.size-options span {
+    padding: 5px 12px;
+}
+
+.full-add-button {
+    margin: 20px 0;
+}
+
+.full-add-button img {
+}
 /* ALL DESKTOP ---------------------------------------- */
 @media (min-width: 1024px) {    
     /* nav bar */

@@ -263,3 +263,16 @@ function handleQuickAdd(productId) {
     */
     alert(`${product.name} added to cart!`);
 }
+
+// when page is product_detail.html...
+if (window.location.pathname.includes('product_detail.html')) {
+    window.addEventListener('DOMContentLoaded', () => {
+        // get id from URL (to specify which product the product_detail page will describe)
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id'));
+
+        // find products in array
+        // fill in with images
+        // render sizes & qty
+    });
+}
