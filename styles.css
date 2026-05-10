@@ -307,9 +307,31 @@ nav {
     width: 100%;
 }
 
+/* product detail -------------------------------------------------------------- */
+.detail-main {
+    padding: 0;
+}
 
-/* desktop ---------------------------------------- */
+.back-link {
+    display: block;
+    padding: 15px;
+}
+
+.shipping-banner {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.detail-info {
+    padding: 20px;
+}
+
+
+/* ALL DESKTOP ---------------------------------------- */
 @media (min-width: 1024px) {    
+    /* nav bar */
     nav {
         background-size: 100% 150%;
         background-position: center -40px;
@@ -341,6 +363,8 @@ nav {
     .nav-icon img {
         height: 45px;
     }
+
+    /* search -------------------------------------------------- */
 
     .search-main {
         padding: 40px;

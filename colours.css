@@ -54,3 +54,10 @@ nav a {
 .add-cart-button {
     background: none;
 }
+
+/* product detail ---------------------------------- */
+
+.shipping-banner {
+    background-color: #D85D75;
+    color: white;
+}
