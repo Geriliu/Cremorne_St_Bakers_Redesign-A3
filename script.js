@@ -229,14 +229,13 @@ function handleQuickAdd(productId) {
     const selectedSize = product.sizes ? product.sizes[0] : product.subtitle;
     
     // notification (placeholder)
-    console.log(`Added ${product.name} (${selectedSize}) to cart.`);
+    alert(`1 ${product.name} (${selectedSize}) added to cart!`);
     
     /* need to: 
     - update cart number 
     - show green notification instead of console.log 
     - animation of notification
     */
-    alert(`${product.name} added to cart!`);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
