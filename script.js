@@ -219,32 +219,7 @@ function search() {
         // render into first grid - just so happens to be the `cakesGrid`
         renderProducts(filteredResults, 'cakesGrid');
     }
-
 };
-
-
-window.addEventListener('DOMContentLoaded', () => {
-    // first render
-    renderProducts(cakes, 'cakesGrid');
-    renderProducts(liteBites, 'bitesGrid');
-    renderProducts(toppers, 'toppersGrid');
-
-    // searcg input listener
-    const searchInput = document.getElementById('searchInput');
-    const searchButton = document.getElementById('searchButton');
-
-    // on typing
-    searchInput.addEventListener('input', search);
-
-    // on clicking the search button
-    searchButton.addEventListener('click', search);
-    
-    // if user press keyboard ENTER
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') search();
-    });
-});
-
 
 function handleQuickAdd(productId) {
     // find product in array
@@ -264,9 +239,11 @@ function handleQuickAdd(productId) {
     alert(`${product.name} added to cart!`);
 }
 
-// when page is product_detail.html...
-if (window.location.pathname.includes('product_detail.html')) {
-    window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
+    // when page is product_detail.html...
+    const isDetailPage = window.location.pathname.includes('product_detail.html');
+
+    if (isDetailPage) {
         // get id from URL (to specify which product the product_detail page will describe)
         const urlParams = new URLSearchParams(window.location.search);
         const productId = parseInt(urlParams.get('id'));
@@ -285,6 +262,30 @@ if (window.location.pathname.includes('product_detail.html')) {
 
             // render sizes & qty
             const sizeContainer = document.getElementById('sizeOptions');
-        } 
-    });
-}
+            if (product.sizes) {
+                sizeContainer.innerHTML = product.sizes.map(size => `<span>${size}</span>`).join('');
+            } else {
+                sizeContainer.innerHTML = `<span>${product.subtitle}</span>`;
+            }
+        }
+    } else {
+        // first render
+        renderProducts(cakes, 'cakesGrid');
+        renderProducts(liteBites, 'bitesGrid');
+        renderProducts(toppers, 'toppersGrid');
+
+        // search input listener
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+
+        if (searchInput) searchInput.addEventListener('input', search); // typing
+        if (searchButton) searchButton.addEventListener('click', search); // clicking search button
+
+        // if user press keyboard ENTER
+        if (searchInput) {
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') search();
+            });
+        }
+    }
+});
