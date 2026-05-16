@@ -3,12 +3,12 @@ body {
     background-color: #F1E9D2;
 }
 
-h1, h2, h3 { 
-    color: #4A4A4A;
+h1, h2, h3, .product-details, .product-description { 
+    color: #1A1A1A;  /* darker text - better readability, accessiblilty */
 }
 /* nav bar ------------------------------------------------------------ */
 .nav-content {
-    background-color: #4A4A4A; /* top part of nav */
+    background-color: #4a4a4a; /* top part of nav */
 }
 
 nav a { 
@@ -27,12 +27,12 @@ nav {
 }
 
 .filter-pill {
-    color: #00c896;
-    border: 2px solid #00c896;
+    color: #0d8869;
+    border: 2px solid #0d8869;
 }
 
 .filter-pill.active {
-    background: #00c896;
+    background: #0d8869;
     color: white;
 }
 
@@ -43,20 +43,16 @@ nav {
 }
 
 .product-title {
-    color: #5BD7A9;
+    color: #0d8869;
 }
 
 .product-price {
-    color: #5BD7A9;
+    color: #0d8869;
 }
 
 .product-sizes span {
     border: 1px solid #8d8d8d;
-    color: #4a4a4a;
-}
-
-.product-details, .product-description {
-    color: #4A4A4A;
+    color: #1A1A1A;
 }
 
 .product-description { 
@@ -64,11 +60,11 @@ nav {
 }
 
 .product-ingredients { 
-    color: #828282;
+    color: #585858;
 }
 
 .product-header {
-    border-top: 0.5px solid #4a4a4a;
+    border-top: 0.5px solid #1A1A1A;
 }
 
 .add-cart-button {
@@ -83,7 +79,8 @@ nav {
 }
 
 #productName {
-    background-color: #97ebd2; 
+    background-color: #97ebd2;
+    color: #1A1A1A; 
 }
 
 .size-options span {
