@@ -320,6 +320,59 @@ nav {
     padding: 20px;
 }
 
+.detail-images { 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0; 
+}
+
+#mainImage {
+    width: 50%;
+    object-fit: cover;
+}
+
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#productDescription {
+    margin-bottom: 20px;
+}
+
+/* cremie (static) */
+.cremie-bubble {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 180px;
+    z-index: 2000; /* above everything else */
+}
+
+.cremie-bubble img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* qty stepper styling */
+.qty-stepper {
+    display: flex;
+    border: 1px solid #8d8d8d;
+    align-items: center;
+}
+
+.qty-stepper button {
+    padding: 5px 12px;
+}
+
+.qty-stepper span {
+    padding: 0 10px;
+}
+
 #productName {
     display: inline-block;
     padding: 5px 15px;
@@ -355,6 +408,39 @@ nav {
 
 .full-add-button img {
     width: 40%;
+}
+
+/* images carousel -----------------------------------------------------*/
+.detail-images { 
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+    overflow-x: auto;
+    padding: 15px;
+    gap: 15px;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-detail-img {
+    flex: 0 0 75%; 
+    width: 75%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    scroll-snap-align: center;
+}
+
+.detail-images::-webkit-scrollbar { 
+    display: none; /* hide horizontal scrollbar */
+}
+
+.carousel-detail-img {
+    flex: 0 0 75%; /* Allow peeking from sides from surrounding images */
+    width: 75%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    scroll-snap-align: center;
 }
 
 /* ALL DESKTOP ---------------------------------------- */

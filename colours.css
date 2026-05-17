@@ -86,3 +86,12 @@ nav {
 .size-options span {
     border: 1px solid #ccc;
 }
+
+.title-row {
+    border-bottom: 0.5px solid #8d8d8d;
+}
+
+.carousel-detail-img {
+    border: 1px solid #C7C7C7;
+    background-color: white;
+}

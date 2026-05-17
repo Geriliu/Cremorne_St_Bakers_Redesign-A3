@@ -46,6 +46,7 @@ const cakes = [
         id: 5,
         name: 'Berry Velvet',
         image: 'assets/images/berry-velvet-square.png',
+        support_images: ['assets/images/berry-velvet-square-2.png', 'assets/images/berry-velvet-square-3.png'],
         price: 85, 
         subtitle: '8"',
         description: 'A vibrant red velvet cake with a burst of berry flavor, topped with cream cheese frosting and freeze-dried berries.',
@@ -256,17 +257,51 @@ window.addEventListener('DOMContentLoaded', () => {
             document.getElementById('productName').textContent = product.name;
             document.getElementById('productPrice').textContent = `$${product.price}`;
             document.getElementById('productDescription').textContent = product.description;
-            document.getElementById('mainImage').src = product.image;
             document.getElementById('ingredientsList').textContent = product.ingredients;
+
+            // carousel
+            const imagesContainer = document.getElementById('detailImagesContainer');
+            
+            // however, if support_images exists, use it. Otherwise, wrap the single image in an array for other products
+            const productImagesList = product.support_images ? product.support_images : [product.image];
+            
+            // map over array to create image tags dynamically
+            imagesContainer.innerHTML = productImagesList.map(imgUrl => 
+                `<img src="${imgUrl}" alt="${product.name}" class="carousel-detail-img">`
+            ).join('');
 
             // render sizes & qty
             const sizeContainer = document.getElementById('sizeOptions');
             if (product.sizes) {
-                sizeContainer.innerHTML = product.sizes.map(size => `<span>${size}</span>`).join('');
+                sizeContainer.innerHTML = product.sizes.map((size, index) => 
+                    `<span class="${index === 0 ? 'selected' : ''}" style="border: 1px solid #ccc; margin-right: 5px; padding: 5px 10px;">${size}</span>`
+                ).join('');
+                // adding serving note for cakes
+                document.getElementById('servingsNote').textContent = "(Serves 10-14)";
             } else {
-                sizeContainer.innerHTML = `<span>${product.subtitle}</span>`;
+                sizeContainer.innerHTML = `<span class="selected" style="border: 1px solid #ccc; padding: 5px 10px;">${product.subtitle}</span>`;
+                // Clear the serving note if it's not a cake
+                document.getElementById('servingsNote').textContent = "";
             }
         }
+
+        // qty stepper
+        const qtyDisplay = document.querySelector('.qty-stepper span');
+        const [minusBtn, plusBtn] = document.querySelectorAll('.qty-stepper button');
+        
+        if (plusBtn) {
+            plusBtn.onclick = () => {
+                let val = parseInt(qtyDisplay.textContent);
+                qtyDisplay.textContent = val + 1;
+            };
+        }
+        if (minusBtn) {
+            minusBtn.onclick = () => {
+                let val = parseInt(qtyDisplay.textContent);
+                if (val > 1) qtyDisplay.textContent = val - 1;
+            };
+        }
+    
     } else {
         // first render
         renderProducts(cakes, 'cakesGrid');
