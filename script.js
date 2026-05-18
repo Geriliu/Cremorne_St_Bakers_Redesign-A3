@@ -279,7 +279,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 `<img src="${imgUrl}" alt="${product.name}" class="carousel-detail-img">`
             ).join('');
 
-            // render sizes & qty
+            // render sizes & qty & full-add-button 
             const sizeContainer = document.getElementById('sizeOptions');
             if (product.sizes) {
                 sizeContainer.innerHTML = product.sizes.map((size, index) => 
@@ -292,6 +292,10 @@ window.addEventListener('DOMContentLoaded', () => {
                 // Clear the serving note if it's not a cake
                 document.getElementById('servingsNote').textContent = "";
             }
+
+            // const fullAddButton = document.getElementsByClassName('full-add-button');
+            // fullAddButton.setAttribute('onclick')
+            // should this be changed to ID, not class?
         }
 
         // qty stepper

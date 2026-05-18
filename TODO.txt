@@ -1,11 +1,11 @@
-- live website link - search up
+- live website link - google
 - video showcase - lecture? 
-- does cremie need to work - no, just pop up 
-
-
+    - need to upload report as well? or just video 
+    just talk about how it changed from A1 & A2
 
 TODO: 
 important
+- full-add-button line 282 of JS how to add onclick
 - longer description on product_detail.html 
 - product detail layout 
 - cart badges 
@@ -15,10 +15,13 @@ important
 - form email should be valid format (name@domain.com)
 - other text fields should include appropriate constraints
 - recommended products should be BASED off what user added to cart
+- consistent text colour 
+- nav bar white text? 
+- switch back button & shipping banner 
 
 not as important (if there is time)
 - image quality 
-
-
-*notes 
-- focus on 2 core colours (darker green & yellow?) not sure 
+- focus attribute of button 
+- cremie red like banner (call to action)
+- progressive disclosure 
+- focus on 2 core colours (darker green & yellow?) not sure about this?
