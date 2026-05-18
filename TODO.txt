@@ -6,7 +6,6 @@
 
 TODO: 
 important
-- change text to black (accessibility issue) 
 - longer description on product_detail.html 
 - product detail layout 
 - cart badges 
@@ -22,5 +21,4 @@ not as important (if there is time)
 
 
 *notes 
-- check bright green contrast
-- focus on 2 core colours (darker green & yellow?) 
+- focus on 2 core colours (darker green & yellow?) not sure 

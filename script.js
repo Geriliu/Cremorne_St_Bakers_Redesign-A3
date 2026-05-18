@@ -101,7 +101,7 @@ const liteBites = [
 const toppers = [
     {
         id: 10,
-        name: '"Hooray" - Confetti',
+        name: '"Hooray" - Confetti Cake Topper',
         image: 'assets/images/hooray-confetti-square.png',
         price: 24,
         subtitle: '1pc',
@@ -110,7 +110,7 @@ const toppers = [
     }, 
     {
         id: 11,
-        name: 'Pom Poms',
+        name: 'Pom Poms Cake Topper',
         image: 'assets/images/pom-pom-square.png',
         support_images: [
             'assets/images/pom-pom-square-2.png', 
@@ -124,7 +124,7 @@ const toppers = [
     }, 
     {
         id: 12,
-        name: '"Happy Birthday" Gold Mirror - round',
+        name: '"Happy Birthday" Gold Mirror Cake Topper',
         image: 'assets/images/happy-bday-gold-square.png',
         price: 26.50,
         subtitle: '1pc',

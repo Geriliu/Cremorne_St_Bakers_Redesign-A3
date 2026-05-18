@@ -12,7 +12,7 @@ h1, h2, h3, .product-details, .product-description {
 }
 
 nav a { 
-    color: #5BD7A9; 
+    color: #14ac86; 
     text-decoration: none; /* no underline */
 }
 
@@ -27,12 +27,12 @@ nav {
 }
 
 .filter-pill {
-    color: #0d8869;
-    border: 2px solid #0d8869;
+    color: #14ac86;
+    border: 2px solid #14ac86;
 }
 
 .filter-pill.active {
-    background: #0d8869;
+    background: #14AC86;
     color: white;
 }
 
@@ -43,11 +43,11 @@ nav {
 }
 
 .product-title {
-    color: #0d8869;
+    color: #14AC86;
 }
 
 .product-price {
-    color: #0d8869;
+    color: #14AC86;
 }
 
 .product-sizes span {
@@ -79,7 +79,7 @@ nav {
 }
 
 #productName {
-    background-color: #97ebd2;
+    background-color: #14AC86;
     color: #1A1A1A; 
 }
 
