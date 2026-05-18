@@ -301,12 +301,21 @@ nav {
 
 /* product detail -------------------------------------------------------------- */
 .detail-main {
-    padding: 0;
+    padding: 25px 0px 0px 0px;
+    margin-top: -110px; /* way under nav wave */
+    position: relative;
+    z-index: 1000; /* keep interactive above so they are clickable */
 }
 
 .back-link {
-    display: block;
-    padding: 15px;
+    display: inline-block;
+    padding: 10px 15px;
+    margin-bottom: 0px; 
+}
+
+.back-link img {
+    height: 20px; 
+    width: auto;
 }
 
 .shipping-banner {
@@ -314,17 +323,31 @@ nav {
     padding: 10px;
     font-size: 14px;
     font-weight: 600;
+    margin-bottom: 15px; 
 }
 
-.detail-info {
-    padding: 20px;
-}
-
+/* images carousel */
 .detail-images { 
     width: 100%;
     display: flex;
-    justify-content: center;
-    padding: 10px 0; 
+    flex-direction: row; 
+    overflow-x: auto;
+    padding: 15px;
+    gap: 15px;
+    scroll-snap-type: x mandatory;
+}
+
+.detail-images::-webkit-scrollbar { 
+    display: none; /* hide horizontal system scrollbars */
+}
+
+.carousel-detail-img {
+    flex: 0 0 75%; /* Allow peeking from sides from surrounding images */
+    width: 75%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    scroll-snap-align: center;
 }
 
 #mainImage {
@@ -410,7 +433,11 @@ nav {
     width: 40%;
 }
 
-/* images carousel -----------------------------------------------------*/
+.detail-info {
+    padding: 20px;
+}
+
+/* images carousel */
 .detail-images { 
     width: 100%;
     display: flex;
@@ -421,17 +448,8 @@ nav {
     scroll-snap-type: x mandatory;
 }
 
-.carousel-detail-img {
-    flex: 0 0 75%; 
-    width: 75%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 6px;
-    scroll-snap-align: center;
-}
-
 .detail-images::-webkit-scrollbar { 
-    display: none; /* hide horizontal scrollbar */
+    display: none; /* hide horizontal scrollbars */
 }
 
 .carousel-detail-img {

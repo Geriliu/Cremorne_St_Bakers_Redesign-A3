@@ -18,7 +18,7 @@ important
 - recommended products should be BASED off what user added to cart
 
 not as important (if there is time)
-- search filters work 
+- image quality 
 
 
 *notes 

@@ -46,7 +46,11 @@ const cakes = [
         id: 5,
         name: 'Berry Velvet',
         image: 'assets/images/berry-velvet-square.png',
-        support_images: ['assets/images/berry-velvet-square-2.png', 'assets/images/berry-velvet-square-3.png'],
+        support_images: [
+            'assets/images/berry-velvet-square-2.png', 
+            'assets/images/berry-velvet-square.png', 
+            'assets/images/berry-velvet-square-3.png'
+        ],
         price: 85, 
         subtitle: '8"',
         description: 'A vibrant red velvet cake with a burst of berry flavor, topped with cream cheese frosting and freeze-dried berries.',
@@ -108,6 +112,11 @@ const toppers = [
         id: 11,
         name: 'Pom Poms',
         image: 'assets/images/pom-pom-square.png',
+        support_images: [
+            'assets/images/pom-pom-square-2.png', 
+            'assets/images/pom-pom-square.png', 
+            'assets/images/pom-pom-square-3.png'
+        ],
         price: 27,
         subtitle: '1pc',
         description: 'Add whimsical charm to your celebration with our curated Pom Pom toppers. Handcrafted by boutique designers in the USA & England, they are the perfect finishing touch for any occasion.',
