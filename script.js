@@ -237,12 +237,31 @@ function handleQuickAdd(productId) {
     
     // "quick add" will add smallest size (defaults to subtitle if "sizes" array don't exist)
     const selectedSize = product.sizes ? product.sizes[0] : product.subtitle;
-    
+    const chosenQty = 1;
+
+    // use existing cart, or create a new one if it's the first item
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // item details we're adding into cart
+    const cartItem = {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        size: selectedSize,
+        qty: chosenQty
+    };
+
+    //save to storage
+    cart.push(cartItem);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
     // notification (placeholder)
     alert(`1 ${product.name} (${selectedSize}) added to cart!`);
+
+    updateCartBadge();
     
     /* need to: 
-    - update cart number 
     - show green notification instead of console.log 
     - animation of notification
     */
@@ -332,8 +351,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     // alert confirm --------------------------------------------------- REPLACE WITH GREEN NOTIFICATION SVG LATER
                     alert(`${chosenQty}x ${product.name} (${chosenSize}) added to your cart!`);
-                    
-                    // not yet implemented...funct updating badge on cart icon
                     updateCartBadge();
                 };
             }
@@ -377,3 +394,19 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+/* updates the small red counter badge on cart icon */
+function updateCartBadge() {
+    const badges = document.querySelectorAll('[data-cart-badge]');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // total items currently sitting inside the storage array
+    const totalItems = cart.reduce((total, item) => total + item.qty, 0);
+    
+    badges.forEach(badge => {
+        badge.textContent = totalItems;
+    });
+}
+
+// call on all DOMContentLoaded so it updates each time a page loads/reloads
+window.addEventListener('DOMContentLoaded', updateCartBadge);

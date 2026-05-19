@@ -8,7 +8,7 @@ important
 - size (on product detail page) should stay in one state, do later
 - longer description on product_detail.html 
 - product detail layout 
-- cart badges 
+- cart badges (should be red)
 - added to cart notif
 - cart layout 
 - purchase layout 
