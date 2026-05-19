@@ -17,11 +17,10 @@ important
 - recommended products should be BASED off what user added to cart
 - consistent text colour 
 - nav bar white text? 
-- switch back button & shipping banner 
+- switch back button & shipping banner (more intuitive)
 
 not as important (if there is time)
 - image quality 
-- focus attribute of button 
 - cremie red like banner (call to action)
 - progressive disclosure 
-- focus on 2 core colours (darker green & yellow?) not sure about this?
+- focus on 2 core colours (current green & pink, grey as undertone)
