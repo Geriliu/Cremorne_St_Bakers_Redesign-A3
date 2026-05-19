@@ -5,7 +5,7 @@
 
 TODO: 
 important
-- full-add-button line 282 of JS how to add onclick
+- size (on product detail page) should stay in one state, do later
 - longer description on product_detail.html 
 - product detail layout 
 - cart badges 

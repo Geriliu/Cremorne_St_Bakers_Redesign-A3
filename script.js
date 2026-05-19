@@ -293,9 +293,50 @@ window.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('servingsNote').textContent = "";
             }
 
-            // const fullAddButton = document.getElementsByClassName('full-add-button');
-            // fullAddButton.setAttribute('onclick')
-            // should this be changed to ID, not class?
+            // if user click on sizes
+            const sizeSpans = sizeContainer.querySelectorAll('span');
+            sizeSpans.forEach(span => {
+                span.onclick = () => {
+                    sizeSpans.forEach(s => s.classList.remove('selected'));
+                    span.classList.add('selected');
+                };
+            });
+
+            // ADD TO CART BTN - reads current selections of qty & size
+            const fullAddButton = document.getElementById('fullAddButton');
+            if (fullAddButton) {
+                fullAddButton.onclick = () => {
+                    // find the size span tjat has the "selected" state
+                    const activeSizeSpan = sizeContainer.querySelector('.selected');
+                    const chosenSize = activeSizeSpan ? activeSizeSpan.textContent : product.subtitle;
+                    
+                    // read current numerical string from qty display text
+                    const chosenQty = parseInt(document.querySelector('.qty-stepper span').textContent) || 1;
+
+                    // fetch existing cart list from `localStorage`, otherwise initialise array if empty
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                    // make new order item data (to be added to cart) structure
+                    const cartItem = {
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        size: chosenSize,
+                        qty: chosenQty
+                    };
+
+                    // push item to cart array and save it back to browser storage (for later)
+                    cart.push(cartItem);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+
+                    // alert confirm --------------------------------------------------- REPLACE WITH GREEN NOTIFICATION SVG LATER
+                    alert(`${chosenQty}x ${product.name} (${chosenSize}) added to your cart!`);
+                    
+                    // not yet implemented...funct updating badge on cart icon
+                    updateCartBadge();
+                };
+            }
         }
 
         // qty stepper
