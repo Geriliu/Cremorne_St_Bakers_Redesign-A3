@@ -395,7 +395,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/* updates the small red counter badge on cart icon */
+/* updates the small red counter badge on cart icon
+*/
 function updateCartBadge() {
     const badges = document.querySelectorAll('[data-cart-badge]');
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -408,5 +409,98 @@ function updateCartBadge() {
     });
 }
 
+/* 
+*/
+function renderCartPage() {
+    const isCartPage = window.location.pathname.includes('cart.html');
+    if (!isCartPage) return;
+
+    const cartEmptyMessage = document.getElementById('cartEmpty');
+    const cartSummaryBlock = document.getElementById('cartSummary');
+    const itemsContainer = document.getElementById('cartItemsList');
+    const subtotalDisplay = document.getElementById('cartSubtotal');
+    const countHeaderDisplay = document.getElementById('cartCountHeader');
+
+    let cart = [];
+    try {
+        cart = JSON.parse(localStorage.getItem('cart')) || [];
+    } catch (e) {
+        console.error("Error reading cart data from localStorage", e);
+        cart = [];
+    }
+
+    // calc & update text header FIRST, so it's running anyway
+    const totalItemsCount = cart.reduce((total, item) => total + (parseInt(item.qty) || 0), 0);
+    
+    if (countHeaderDisplay) {
+        countHeaderDisplay.textContent = totalItemsCount === 1 ? "1 item" : `${totalItemsCount} items`;
+    }
+
+    // edgecase: empty cart :(
+    if (cart.length === 0) {
+        if (cartEmptyMessage) cartEmptyMessage.style.display = 'block';
+        if (cartSummaryBlock) cartSummaryBlock.classList.add('u-hidden');
+        if (itemsContainer) itemsContainer.innerHTML = '';
+        if (subtotalDisplay) subtotalDisplay.textContent = "AUD $0.00";
+        return; // safe to quit now, since counter already updated before
+    }
+
+    // active cart handling
+    if (cartEmptyMessage) cartEmptyMessage.style.display = 'none';
+    if (cartSummaryBlock) cartSummaryBlock.classList.remove('u-hidden');
+
+    // render active items list layout matching entries
+    if (itemsContainer) {
+        itemsContainer.innerHTML = cart.map((item, index) => {
+            const displayName = item.size ? `${item.name} (${item.size})` : item.name;
+            
+            return `
+            <article class="cart-item-row">
+                <div class="cart-item-main-layout">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-thumb">
+                    
+                    <div class="cart-item-body">
+                        <h2 class="cart-item-title">${displayName}</h2>
+                        <button type="button" class="btn-add-note">Add a note</button>
+                        
+                        <div class="cart-item-pricing-footer">
+                            <span class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</span>
+                            
+                            <div class="cart-qty-stepper-wrap">
+                                <button type="button" onclick="adjustCartQty(${index}, -1)">-</button>
+                                <span>${item.qty}</span>
+                                <button type="button" onclick="adjustCartQty(${index}, 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            `;
+        }).join('');
+    }
+
+    // compute final subtotal sum balance
+    const totalCost = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    if (subtotalDisplay) {
+        subtotalDisplay.textContent = `AUD $${totalCost.toFixed(2)}`;
+    }
+
+    const clearCartButton = document.getElementById('clearCartButton');
+    if (clearCartButton) {
+        clearCartButton.onclick = () => {
+            localStorage.removeItem('cart');
+            renderCartPage();
+            updateCartBadge();
+        };
+    }
+}
+
 // call on all DOMContentLoaded so it updates each time a page loads/reloads
-window.addEventListener('DOMContentLoaded', updateCartBadge);
+// This listens for the page load and triggers your functions automatically
+window.addEventListener('DOMContentLoaded', () => {
+    // cart page layout render
+    renderCartPage();
+    
+    // refresh the nav bar badge counters
+    updateCartBadge();
+});
