@@ -95,3 +95,36 @@ nav {
     border: 1px solid #C7C7C7;
     background-color: white;
 }
+
+
+.summary-line {
+    color: #666;
+}
+
+.summary-divider {
+    border-top: 1px solid #4a4a4a;
+}
+
+.subtotal-row {
+    color: #4a4a4a;
+}
+
+.toggle-group {
+    border: 1px solid #8d8d8d;
+}
+
+.toggle-btn {
+    background-color: #e5dfcb;
+    color: #4a4a4a;
+}
+
+.toggle-btn.active {
+    background-color: #555555;
+    color: #e5dfcb;
+}
+
+.datetime-pill {
+    background-color: #8d8d8d;
+    color: #0088FF;
+}
+ 

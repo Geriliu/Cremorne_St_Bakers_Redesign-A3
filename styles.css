@@ -461,7 +461,102 @@ nav {
     scroll-snap-align: center;
 }
 
-/* ALL DESKTOP ---------------------------------------- */
+/* cart page ---------------------------------------------------------------------- */
+/* footer wave */
+.cart-footer-wave {
+    background-image: url('assets/images/cart-footer-background-wave.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-top: 50px; /* a lot top padding */
+    margin-top: 40px;
+    width: 100%;
+}
+
+.footer-wave-content {
+    padding: 0 20px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+.summary-divider {
+    border: none;
+    margin: 5px 0;
+}
+
+.subtotal-row {
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+.fulfillment-panel {
+    padding: 10px 20px 40px 20px;
+}
+
+.fulfillment-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.toggle-group {
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.toggle-btn {
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.datetime-pills {
+    display: flex;
+    gap: 8px;
+}
+
+.datetime-pill {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+ 
+.cart-nav-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; /* clean spacing so buttons don't touch */
+    width: 100%;
+    padding: 0 10px;
+}
+
+.btn-continue-shopping,
+.btn-checkout-forward {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex: 1; /* both buttons should take up equal space on footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-continue-shopping img,
+.btn-checkout-forward img {
+    width: 100%; 
+    max-width: 165px;
+    height: auto;
+}
+
+/* ALL DESKTOP -------------------------------------------------------------------- */
 @media (min-width: 1024px) {    
     /* nav bar */
     nav {
