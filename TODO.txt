@@ -1,21 +1,20 @@
 - live website link - google
-- video showcase - lecture? 
-    - need to upload report as well? or just video 
-    just talk about how it changed from A1 & A2
 
 TODO: 
 important
-- size (on product detail page) should stay in one state, do later
-- longer description on product_detail.html 
-- product detail layout 
+
 - cart badges (should be red)
 - added to cart notif
 - cart layout 
 - purchase layout 
 - form email should be valid format (name@domain.com)
 - other text fields should include appropriate constraints
+- size (on product detail page) should stay in one state
 - recommended products should be BASED off what user added to cart
+
+- product detail layout 
 - consistent text colour 
+- longer description on product_detail.html 
 - nav bar white text? 
 - switch back button & shipping banner (more intuitive)
 
