@@ -18,6 +18,10 @@ important
 - nav bar white text? 
 - switch back button & shipping banner (more intuitive)
 
+FOR DESKTOP: 
+- scale up red cart badge
+
+
 not as important (if there is time)
 - image quality 
 - cremie red like banner (call to action)

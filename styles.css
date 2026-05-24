@@ -89,6 +89,39 @@ nav {
     margin: 0;
 }
 
+/* container matching dimensions of SVG asset */
+.cart-icon-wrapper {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* force SVG asset to scale - using responsive design */
+.cart-icon-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 24px; 
+}
+
+/* badge properties */
+[data-cart-badge] {
+    font-size: 11px;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    
+    /* anchor red circle to top right corner of SVG boundaries */
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
 /* hero image section -------------------------------------------------- */
 .hero {
     width: 100%;
@@ -589,6 +622,12 @@ nav {
 
     .nav-icon img {
         height: 45px;
+    }
+
+    [data-cart-badge] {
+        /* manually change coordinates */
+        top: 20px;   
+        right: 55px; 
     }
 
     /* search -------------------------------------------------- */
