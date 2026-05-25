@@ -256,8 +256,8 @@ function handleQuickAdd(productId) {
     cart.push(cartItem);
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    // notification (placeholder)
-    alert(`1 ${product.name} (${selectedSize}) added to cart!`);
+    // notification 
+    triggerCartNotification(1, product.name, selectedSize);
 
     updateCartBadge();
     
@@ -350,7 +350,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem('cart', JSON.stringify(cart));
 
                     // alert confirm --------------------------------------------------- REPLACE WITH GREEN NOTIFICATION SVG LATER
-                    alert(`${chosenQty}x ${product.name} (${chosenSize}) added to your cart!`);
+                    triggerCartNotification(chosenQty, product.name, chosenSize);
                     updateCartBadge();
                 };
             }
@@ -492,6 +492,23 @@ function renderCartPage() {
             renderCartPage();
             updateCartBadge();
         };
+    }
+}
+
+/* custom notifications when item is successfully added with dynamic text injections */
+function triggerCartNotification(quantity, productName, sizeSuffix) {
+    const banner = document.getElementById('cartNotification');
+    const textSpan = document.getElementById('notificationText');
+    
+    if (banner && textSpan) {
+        // append size if a custom choice was made, otherwise keeps it clean
+        const sizeInfo = sizeSuffix ? ` (${sizeSuffix})` : '';
+        
+        // text inside HTML 
+        textSpan.innerHTML = `${quantity} <span class="notification-item-link">${productName}${sizeInfo}</span> added to Cart!`;
+        
+        // slide into view
+        banner.classList.add('show');
     }
 }
 

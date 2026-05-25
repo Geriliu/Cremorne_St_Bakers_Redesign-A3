@@ -31,6 +31,16 @@ nav {
     color: #ffffff !important;
 }
 
+/* successful add to cart notif ------------------------------------------------------------- */
+/* colour override for custom notif container and text */
+.cart-notification-banner {
+    background-color: #1bb28a; 
+}
+
+#notificationText {
+    color: #ffffff; 
+}
+
 /* search ------------------------------------------------------------ */
 .search-box { 
     background-color: white;

@@ -3,7 +3,6 @@
 TODO: 
 important
 
-- cart badges (should be red)
 - added to cart notif
 - cart layout 
 - purchase layout 
