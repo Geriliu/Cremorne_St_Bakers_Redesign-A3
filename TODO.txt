@@ -2,14 +2,13 @@
 
 TODO: 
 important
-
-- added to cart notif
-- cart layout 
-- purchase layout 
+- checkout layout 
 - form email should be valid format (name@domain.com)
 - other text fields should include appropriate constraints
 - size (on product detail page) should stay in one state
 - recommended products should be BASED off what user added to cart
+- notif disappear after few secs
+- cart layout 
 
 - product detail layout 
 - consistent text colour 

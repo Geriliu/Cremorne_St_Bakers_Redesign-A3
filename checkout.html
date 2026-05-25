@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- fonts used in css -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Source+Sans+3:wght@40;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="colours.css">
     <link rel="stylesheet" href="styles.css">
     <title>Checkout | Cremorne Street Bakers</title>
 </head>
-
 <body>
     <nav>
         <div class="nav-content">
-            <!-- logo is different alignment from other nav items, so separated -->
             <a href="home.html"><img src="assets/images/CSB.svg" alt="Cremorne Street Bakers" class="nav-logo"></a>
             <div class="nav-items">
                 <div class="nav-links">
@@ -26,25 +22,115 @@
                         <li><a href="about.html">About</a></li>
                     </ul>
                 </div>
-                <!-- search icon first -->
                 <a href="search.html" class="nav-icon" aria-label="Search"><img src="assets/icons/search-nav-icon.svg" alt=""></a>
-                <!-- cart icon on the very right -->
                 <a href="cart.html" class="nav-icon" aria-label="Shopping cart">
-                    <img src="assets/icons/cart-nav-icon.svg" alt="">
-                    <span class="cart-badge" data-cart-badge>0</span>
+                    <span class="cart-icon-wrapper">
+                        <img src="assets/icons/cart-nav-icon.svg" alt="">
+                        <span class="cart-badge" data-cart-badge>0</span>
+                    </span>
                 </a>
             </div>
         </div>
     </nav>
 
-    <div class="announcement-bar">Shipping available up to 20 kms from our Cremorne bakery.</div>
-
     <main class="checkout-page">
-        <h1 class="font-serif">Checkout</h1>
-        <p class="product-page-desc">Review your order and complete details.</p>
+        <a href="cart.html" class="back-link"><img src="assets/icons/back-button.svg" alt="Go back"></a>
+
+        <div class="checkout-container">
+            <h1 class="checkout-main-title">Checkout</h1>
+            
+            <section class="checkout-summary-section">
+                <div class="summary-line">
+                    <span>Subtotal</span>
+                    <span id="checkoutSubtotal" class="text-right">AUD $0.00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Shipping</span>
+                    <span id="checkoutShipping" class="text-right">FREE</span>
+                </div>
+                <hr class="checkout-divider">
+                <div class="summary-line total-row">
+                    <span>Total</span>
+                    <strong id="checkoutTotal" class="text-right">AUD $0.00</strong>
+                </div>
+            </section>
+
+            <section class="express-pay-section">
+                <label class="section-label">Pay with</label>
+                <div class="express-buttons-grid">
+                    <button type="button" class="btn-express btn-shop-pay"><img src="assets/images/shop-pay-logo.png" alt="Shop Pay"></button>
+                    <button type="button" class="btn-express btn-paypal"><img src="assets/images/paypal-logo.png" alt="PayPal"></button>
+                    <button type="button" class="btn-express btn-afterpay"><img src="assets/images/afterpay-logo.png" alt="Afterpay"></button>
+                </div>
+            </section>
+
+            <hr class="checkout-divider-thick">
+
+            <form class="checkout-form" id="checkoutForm" novalidate>
+                <fieldset class="form-section">
+                    <legend class="section-label">Contact</legend>
+                    <div class="form-group">
+                        <input type="email" id="checkoutEmail" name="email" required placeholder="yourname@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="checkoutPhone" name="phone" required placeholder="04 123 456 789">
+                    </div>
+                </fieldset>
+
+                <hr class="checkout-divider">
+
+                <fieldset class="form-section">
+                    <legend class="section-label">Payment (Credit Card)</legend>
+                    <div class="form-group input-icon-wrap">
+                        <input type="text" id="cardNumber" name="cardnumber" required placeholder="Card number">
+                        <img src="assets/icons/lock.svg" class="input-inner-icon" alt="">
+                    </div>
+                    <div class="form-row-split">
+                        <div class="form-group">
+                            <input type="text" id="cardExpiry" name="expiry" required placeholder="Expiry date (MM/YY)">
+                        </div>
+                        <div class="form-group input-icon-wrap">
+                            <input type="text" id="cardCvc" name="cvc" required placeholder="Security code">
+                            <img src="assets/icons/lock.svg" class="input-inner-icon" alt="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="cardName" name="cardname" required placeholder="Name on card">
+                    </div>
+                    <div class="form-checkbox-group">
+                        <input type="checkbox" id="useShippingAsBilling" checked>
+                        <label for="useShippingAsBilling">Use shipping address as billing address</label>
+                    </div>
+                </fieldset>
+
+                <hr class="checkout-divider">
+
+                <fieldset class="form-section" id="billingAddressSection">
+                    <legend class="section-label">Billing Address</legend>
+                    <div class="form-group">
+                        <label for="billingCountry" class="select-wrapper">
+                            <select id="billingCountry" name="country">
+                                <option value="AU">Australia</option>
+                                <option value="NZ">New Zealand</option>
+                                <option value="US">United States</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="form-row-split">
+                        <div class="form-group">
+                            <input type="text" id="billingFirstName" name="firstname" placeholder="First name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="billingLastName" name="lastname" placeholder="Last name">
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <button type="submit" class="btn-complete-order">Complete Order</button>
+            </form>
+        </div>
     </main>
 
     <script src="script.js"></script>
 </body>
-
 </html>
