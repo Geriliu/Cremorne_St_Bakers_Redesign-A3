@@ -37,42 +37,49 @@
 
         <div class="checkout-container">
             <h1 class="checkout-main-title">Checkout</h1>
-            
+
             <section class="checkout-summary-section">
                 <div class="summary-line">
                     <span>Subtotal</span>
-                    <span id="checkoutSubtotal" class="text-right">AUD $0.00</span>
+                    <span id="checkoutSubtotal">AUD $0.00</span>
                 </div>
                 <div class="summary-line">
                     <span>Shipping</span>
-                    <span id="checkoutShipping" class="text-right">FREE</span>
+                    <span>FREE</span>
                 </div>
                 <hr class="checkout-divider">
                 <div class="summary-line total-row">
                     <span>Total</span>
-                    <strong id="checkoutTotal" class="text-right">AUD $0.00</strong>
+                    <strong id="checkoutTotal">AUD $0.00</strong>
                 </div>
             </section>
 
             <section class="express-pay-section">
                 <label class="section-label">Pay with</label>
                 <div class="express-buttons-grid">
-                    <button type="button" class="btn-express btn-shop-pay"><img src="assets/images/shop-pay-logo.png" alt="Shop Pay"></button>
-                    <button type="button" class="btn-express btn-paypal"><img src="assets/images/paypal-logo.png" alt="PayPal"></button>
-                    <button type="button" class="btn-express btn-afterpay"><img src="assets/images/afterpay-logo.png" alt="Afterpay"></button>
+                    <button type="button" class="btn-express btn-shop-pay">
+                        <img src="assets/images/shop-pay-logo.png" alt="Shop Pay">
+                    </button>
+                    <button type="button" class="btn-express btn-paypal">
+                        <img src="assets/images/paypal-logo.png" alt="PayPal">
+                    </button>
+                    <button type="button" class="btn-express btn-afterpay">
+                        <img src="assets/images/afterpay-logo.png" alt="Afterpay">
+                    </button>
                 </div>
             </section>
 
             <hr class="checkout-divider-thick">
 
-            <form class="checkout-form" id="checkoutForm" novalidate>
+            <form class="checkout-form" id="checkoutForm">
+
                 <fieldset class="form-section">
                     <legend class="section-label">Contact</legend>
                     <div class="form-group">
-                        <input type="email" id="checkoutEmail" name="email" required placeholder="yourname@gmail.com">
+                        <input type="email" id="checkoutEmail" required placeholder="yourname@gmail.com">
                     </div>
                     <div class="form-group">
-                        <input type="tel" id="checkoutPhone" name="phone" required placeholder="04 123 456 789">
+                        <input type="tel" id="checkoutPhone" required pattern="[0-9 ]{8,15}" placeholder="04 123 456 789">
                     </div>
                 </fieldset>
 
@@ -80,53 +87,26 @@
 
                 <fieldset class="form-section">
                     <legend class="section-label">Payment (Credit Card)</legend>
-                    <div class="form-group input-icon-wrap">
-                        <input type="text" id="cardNumber" name="cardnumber" required placeholder="Card number">
-                        <img src="assets/icons/lock.svg" class="input-inner-icon" alt="">
+                    <div class="form-group">
+                        <input type="text" id="cardNumber" required minlength="16" maxlength="16" pattern="[0-9]{16}" placeholder="Card number">
                     </div>
                     <div class="form-row-split">
                         <div class="form-group">
-                            <input type="text" id="cardExpiry" name="expiry" required placeholder="Expiry date (MM/YY)">
+                            <!-- mobile format -->
+                            <input type="text" id="cardExpiry" required pattern="(0[1-9]|1[0-2])\/[0-9]{2}" placeholder="Expiry date (MM/YY)">
                         </div>
-                        <div class="form-group input-icon-wrap">
-                            <input type="text" id="cardCvc" name="cvc" required placeholder="Security code">
-                            <img src="assets/icons/lock.svg" class="input-inner-icon" alt="">
+                        <div class="form-group">
+                            <input type="text" id="cardCvc" required minlength="3" maxlength="4" pattern="[0-9]{3,4}" placeholder="Security code">
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="cardName" name="cardname" required placeholder="Name on card">
-                    </div>
-                    <div class="form-checkbox-group">
-                        <input type="checkbox" id="useShippingAsBilling" checked>
-                        <label for="useShippingAsBilling">Use shipping address as billing address</label>
+                        <input type="text" id="cardName" required placeholder="Name on card">
                     </div>
                 </fieldset>
 
-                <hr class="checkout-divider">
-
-                <fieldset class="form-section" id="billingAddressSection">
-                    <legend class="section-label">Billing Address</legend>
-                    <div class="form-group">
-                        <label for="billingCountry" class="select-wrapper">
-                            <select id="billingCountry" name="country">
-                                <option value="AU">Australia</option>
-                                <option value="NZ">New Zealand</option>
-                                <option value="US">United States</option>
-                            </select>
-                        </label>
-                    </div>
-                    <div class="form-row-split">
-                        <div class="form-group">
-                            <input type="text" id="billingFirstName" name="firstname" placeholder="First name">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="billingLastName" name="lastname" placeholder="Last name">
-                        </div>
-                    </div>
-                </fieldset>
-                
                 <button type="submit" class="btn-complete-order">Complete Order</button>
             </form>
+
         </div>
     </main>
 
