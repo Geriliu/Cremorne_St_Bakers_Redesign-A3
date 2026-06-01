@@ -148,4 +148,16 @@ nav {
     background-color: #8d8d8d;
     color: #0088FF;
 }
- 
+
+/* checkout ------------------------------------------------------------ */
+.checkout-divider {
+    border-top: 1px solid #dcd1be;
+}
+
+.checkout-divider-thick {
+    border-top: 2px solid #333333;
+}
+
+.checkout-form input {
+    border: 1px solid #dcd1be;
+}

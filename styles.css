@@ -636,6 +636,110 @@ nav {
     height: auto;
 }
 
+/* checkout page ----------------------------------------------------------------- */
+.checkout-page {
+    padding: 0 0 40px 0;
+}
+
+.checkout-container {
+    padding: 0 20px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.checkout-main-title {
+    margin: 10px 0 20px 0;
+    font-size: 26px;
+    display: inline-block;
+}
+
+.checkout-summary-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.checkout-summary-section .summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.checkout-divider {
+    border: none;
+    margin: 8px 0;
+}
+
+.checkout-divider-thick {
+    border: none;
+    margin: 25px 0;
+}
+
+.section-label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.express-buttons-grid {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.btn-express {
+    flex: 1;
+    border: none;
+    border-radius: 4px;
+    height: 44px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-section {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-row-split {
+    display: flex;
+    gap: 12px;
+}
+
+.form-row-split .form-group {
+    flex: 1;
+}
+
+.checkout-form input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+}
+
+.btn-complete-order {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 /* ALL DESKTOP -------------------------------------------------------------------- */
 @media (min-width: 1024px) {    
     /* nav bar */

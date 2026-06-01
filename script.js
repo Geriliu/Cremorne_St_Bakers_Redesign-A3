@@ -509,10 +509,29 @@ function triggerCartNotification(quantity, productName, sizeSuffix) {
         
         // slide into view
         banner.classList.add('show');
+
+        setTimeout(() => {
+            banner.classList.remove('show');
+        }, 2500);
     }
 }
 
-// call on all DOMContentLoaded so it updates each time a page loads/reloads
+/* calculates checkout from active local storage entries */
+function renderCheckoutTotals() {
+    const isCheckoutPage = window.location.pathname.includes('checkout.html');
+    if (!isCheckoutPage) return;
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const subtotalDisplay = document.getElementById('checkoutSubtotal');
+    const totalDisplay = document.getElementById('checkoutTotal');
+
+    const totalCost = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    
+    if (subtotalDisplay) subtotalDisplay.textContent = `AUD $${totalCost.toFixed(2)}`;
+    if (totalDisplay) totalDisplay.textContent = `AUD $${totalCost.toFixed(2)}`;
+}
+
+// call on all DOMContentLoaded so it updates each time a page loads/refreshes
 // This listens for the page load and triggers your functions automatically
 window.addEventListener('DOMContentLoaded', () => {
     // cart page layout render
@@ -520,4 +539,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     // refresh the nav bar badge counters
     updateCartBadge();
+
+    // calculates total for checkout if on checkout page
+    renderCheckoutTotals();
 });
