@@ -5,6 +5,7 @@ important
 - size (on product detail page) should stay in one state
 - recommended products should be BASED off what user added to cart
 - cart layout 
+- product detail page image overlapping the nav
 - search nav icon on the left?
 
 - product detail layout 
