@@ -150,14 +150,6 @@ nav {
 }
 
 /* checkout ------------------------------------------------------------ */
-.checkout-divider {
-    border-top: 1px solid #dcd1be;
-}
-
-.checkout-divider-thick {
-    border-top: 2px solid #333333;
-}
-
-.checkout-form input {
-    border: 1px solid #dcd1be;
+.checkout-sticky-footer {
+    background-color: #4a4a4a;
 }
