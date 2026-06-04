@@ -108,6 +108,15 @@ nav {
     border: 1px solid #ccc;
 }
 
+.product-sizes span.selected,
+.size-options span.selected,
+main .product-sizes span.selected,
+main .size-options span.selected {
+    background-color: #1bb28a !important;
+    border-color: #1bb28a !important;
+    color: #ffffff !important;
+}
+
 .title-row {
     border-bottom: 0.5px solid #8d8d8d;
 }
