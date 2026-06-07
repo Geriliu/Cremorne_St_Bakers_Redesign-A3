@@ -90,6 +90,16 @@ nav {
     z-index: 3000;
     padding: 0;
     margin: 0;
+    pointer-events: none; /* lets clicks pass through transparent areas of the 180px container */
+}
+
+/* re-enables clicking only for actual buttons and links inside nav */
+.nav-content, 
+.nav-items, 
+.nav-icons, 
+nav a, 
+.cart-icon-btn {
+    pointer-events: auto;
 }
 
 /* container matching dimensions of SVG asset */
@@ -393,7 +403,7 @@ nav {
 /* product detail -------------------------------------------------------------- */
 .detail-main {
     padding: 25px 0px 0px 0px;
-    margin-top: -110px; /* way under nav wave */
+    margin-top: 50px; /* remove negative pull up so it safely clears the header flow */
     position: relative;
     z-index: 1000; /* keep interactive above so they are clickable */
 }

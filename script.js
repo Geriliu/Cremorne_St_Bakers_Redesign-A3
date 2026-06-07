@@ -1,11 +1,13 @@
 /* product data arrays
     (name, price, and details)
 */
+
 const cakes = [
     {
         id: 1,
         name: 'Elderflower & Lemon Curd',
         image: 'assets/images/elderflower-square.png',
+        categories: ['cakes', 'toppers'],
         price: 60,
         subtitle: '8”',
         description: 'Old-fashioned elderflower pound cake with lemon curd glaze, buttercream, and blue cornflowers.',
@@ -16,6 +18,7 @@ const cakes = [
         id: 2,
         name: 'Double Choc (Choc Ganache Icing)',
         image: 'assets/images/double-choc-square.png',
+        categories: ['cakes', 'toppers'],
         price: 40,
         subtitle: '5"',
         description: 'A luscious dark choc ganache cake, makes a grand party entrance.',
@@ -26,6 +29,7 @@ const cakes = [
         id: 3,
         name: 'Raspberry & Lemon',
         image: 'assets/images/raspberry-lemon-square.png',
+        categories: ['cakes', 'toppers'],
         price: 60,
         subtitle: '8"',
         description: 'Old-fashioned pound cake with pink buttercream, meringue, and edible flowers.',
@@ -36,6 +40,7 @@ const cakes = [
         id: 4,
         name: 'Salted Caramel Chocolate (WF)',
         image: 'assets/images/salted-caramel-choc-square.png',
+        categories: ['cakes', 'toppers'],
         price: 80, 
         subtitle: '8"',
         description: 'Luxurious chocolate cake topped with caramel buttercream, dark chocolate ganache, and gold.',
@@ -46,6 +51,7 @@ const cakes = [
         id: 5,
         name: 'Berry Velvet',
         image: 'assets/images/berry-velvet-square.png',
+        categories: ['cakes', 'toppers'],
         support_images: [
             'assets/images/berry-velvet-square-2.png', 
             'assets/images/berry-velvet-square.png', 
@@ -64,6 +70,7 @@ const liteBites = [
         id: 6,
         name: 'Anzac Biscuits',
         image: 'assets/images/anzac-biscuit-square.png',
+        categories: ['bites', 'biscuits'],
         price: 40,
         subtitle: '8pcs',
         description: 'Golden, crunchy oat biscuits made with sweet coconut and a touch of golden syrup.',
@@ -73,6 +80,7 @@ const liteBites = [
         id: 7,
         name: 'Choc & Jam Lamingtons',
         image: 'assets/images/lamingtons-square.png',
+        categories: ['bites', 'lamingtons'],
         price: 45,
         subtitle: '6pcs',
         description: 'Airy sponge cakes with housemade raspberry jam, coated in rich chocolate and coconut.',
@@ -82,6 +90,7 @@ const liteBites = [
         id: 8,
         name: 'Salted Caramel Brownie (WF)',
         image: 'assets/images/brownie-square.png',
+        categories: ['bites', 'brownies'],
         price: 42,
         subtitle: '6pcs',
         description: 'Decadent salted caramel brownie with rich layers, proving that sometimes more is more.',
@@ -91,6 +100,7 @@ const liteBites = [
         id: 9,
         name: 'Anzac Caramel Slice',
         image: 'assets/images/caramel-slice-square.png',
+        categories: ['bites', 'slices'],
         price: 70,
         subtitle: '10pcs',
         description: 'Lush golden caramel sandwiched between a crunchy Anzac biscuit base and coconut topping.',
@@ -103,6 +113,7 @@ const toppers = [
         id: 10,
         name: '"Hooray" - Confetti Cake Topper',
         image: 'assets/images/hooray-confetti-square.png',
+        categories: ['toppers', 'cakes'],
         price: 24,
         subtitle: '1pc',
         description: 'Premium cake toppers sourced from the USA and England. The perfect way to add a celebratory pop of confetti to any of our signature cakes.',
@@ -112,6 +123,7 @@ const toppers = [
         id: 11,
         name: 'Pom Poms Cake Topper',
         image: 'assets/images/pom-pom-square.png',
+        categories: ['toppers', 'cakes'],
         support_images: [
             'assets/images/pom-pom-square-2.png', 
             'assets/images/pom-pom-square.png', 
@@ -126,12 +138,13 @@ const toppers = [
         id: 12,
         name: '"Happy Birthday" Gold Mirror Cake Topper',
         image: 'assets/images/happy-bday-gold-square.png',
+        categories: ['toppers', 'cakes'],
         price: 26.50,
         subtitle: '1pc',
         description: 'Elevate your cake with this elegant gold mirror round topper. Sourced from premium designers in England, its reflective finish adds a sophisticated touch to any birthday celebration.',
         ingredients: ''
     }
-]
+];
 
 const allProducts = [...cakes, ...liteBites, ...toppers];  // for searching everything at once
 
@@ -531,6 +544,50 @@ function renderCheckoutTotals() {
     if (totalDisplay) totalDisplay.textContent = `AUD $${totalCost.toFixed(2)}`;
 }
 
+// product recommendations based on what's already been added into cart
+function renderCheckoutRecommendations() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const recommendationsContainer = document.getElementById('checkoutRecommendations');
+    
+    if (!recommendationsContainer) return;
+
+    // extract all unique categories currently sitting inside cart
+    const cartCategories = cart.flatMap(item => {
+        const foundProduct = allProducts.find(p => p.id === item.id);
+        return foundProduct ? (foundProduct.categories || []) : [];
+    });
+    const cartItemIds = cart.map(item => item.id);
+
+    // filter master product list based on what they already like
+    let recommended = allProducts.filter(product => {
+        const hasMatchingCategory = product.categories.some(cat => cartCategories.includes(cat));
+        // needs to match category in cart && must not be un-bought
+        return hasMatchingCategory && !cartItemIds.includes(product.id);
+    });
+
+    // BUT if cart is empty || no category matches left, show default popular items
+    if (recommended.length === 0) {
+        recommended = allProducts.filter(product => !cartItemIds.includes(product.id)).slice(0, 2);
+    }
+
+    // inject the html into checkout page carousel
+    recommendationsContainer.innerHTML = '';
+    recommended.forEach(product => {
+        recommendationsContainer.innerHTML += `
+        <div class="product-card">
+            <img src="${product.image}" alt="${product.name}">
+            <div class="product-info">
+                <h3 class="product-title">${product.name}</h3>
+                <span class="product-price">AUD $${product.price.toFixed(2)}</span>
+                <button class="add-cart-button" aria-label="Add to cart" onclick="handleQuickAdd(${product.id})">
+                    <img src="assets/icons/add-to-cart.svg" alt="">
+                </button>
+            </div>
+        </div>
+        `;
+    });
+}
+
 // call on all DOMContentLoaded so it updates each time a page loads/refreshes
 // This listens for the page load and triggers your functions automatically
 window.addEventListener('DOMContentLoaded', () => {
@@ -542,4 +599,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // calculates total for checkout if on checkout page
     renderCheckoutTotals();
+
+    //updates recommendations carousel
+    renderCheckoutRecommendations();
 });
