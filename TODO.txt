@@ -2,7 +2,6 @@
 
 TODO: 
 important
-- home page look nice 
 - padding for search page 
 - if not scrolled to top, quick add has a very quick notification banner. odd.
 - cart layout 
@@ -23,3 +22,7 @@ not as important (if there is time)
 - cremie red like banner (call to action)
 - progressive disclosure 
 - focus on 2 core colours (current green & pink, grey as undertone)
+
+REPORT
+- forgot to put footer in prototype, added into final 
+- Cremie GenAI not fully implemented
