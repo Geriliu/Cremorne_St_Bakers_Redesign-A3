@@ -22,6 +22,7 @@ not as important (if there is time)
 - cremie red like banner (call to action)
 - progressive disclosure 
 - focus on 2 core colours (current green & pink, grey as undertone)
+- cart if same item added more than once on different occasions, then increase count (right now show duplicates?)
 
 REPORT
 - forgot to put footer in prototype, added into final 

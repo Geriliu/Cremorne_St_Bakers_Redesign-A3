@@ -347,8 +347,9 @@ nav a,
     display: flex;
     align-items: center;
     border-radius: 50px;
-    padding: 5px 20px;
-    max-width: 700px;
+    padding: 5px 10px;
+    width: 90vw; /* forces saerch to scale with same room on both edges */
+    max-width: 550px;
     margin: 0 auto;
 }
 
@@ -369,13 +370,13 @@ nav a,
 .search-filters {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 16px;
     margin-top: 25px;
 }
 
 .filter-pill {
     border-radius: 25px;
-    padding: 5px 15px;
+    padding: 5px 10px;
     font-family: 'Playfair Display', serif;
     font-size: 13px;
 }
@@ -385,6 +386,12 @@ nav a,
     margin-left: 5px;
 }
 
+/* h3 section headings, excluding the headings inside product cards */
+.search-main h3, .search-main h2:not(.product-card h3) {
+    padding-left: 20px; /* indents headings on left */
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
 
 /* standard search results grid (vertical) */
 .product-grid {
