@@ -465,29 +465,28 @@ function renderCartPage() {
     // render active items list layout matching entries
     if (itemsContainer) {
         itemsContainer.innerHTML = cart.map((item, index) => {
-            const displayName = item.size ? `${item.name} (${item.size})` : item.name;
-            
             return `
-            <article class="cart-item-row">
-                <div class="cart-item-main-layout">
-                    <img src="${item.image}" alt="${item.name}" class="cart-item-thumb">
-                    
-                    <div class="cart-item-body">
-                        <h2 class="cart-item-title">${displayName}</h2>
-                        <button type="button" class="btn-add-note">Add a note</button>
-                        
-                        <div class="cart-item-pricing-footer">
-                            <span class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</span>
-                            
-                            <div class="cart-qty-stepper-wrap">
-                                <button type="button" onclick="adjustCartQty(${index}, -1)">-</button>
-                                <span>${item.qty}</span>
-                                <button type="button" onclick="adjustCartQty(${index}, 1)">+</button>
-                            </div>
+            <div class="cart-item-card">
+                <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                <div class="cart-item-details">
+                    <div class="cart-item-header">
+                        <div>
+                            <h3 class="cart-item-title">${item.name}</h3>
+                            <p class="cart-item-variant">${item.size || ''}</p>
+                        </div>
+                        <button type="button" class="cart-item-clear-btn" onclick="adjustCartQty(${index}, -${item.qty})">Delete</button>
+                    </div>
+                    <div class="cart-item-footer">
+                        <span class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</span>
+                        <div class="qty-stepper">
+                            <button type="button" onclick="adjustCartQty(${index}, -1)">-</button>
+                            <span>${item.qty}</span>
+                            <button type="button" onclick="adjustCartQty(${index}, 1)">+</button>
                         </div>
                     </div>
+                    <a href="#" class="cart-item-note-link">Add a note</a>
                 </div>
-            </article>
+            </div>
             `;
         }).join('');
     }
@@ -506,6 +505,23 @@ function renderCartPage() {
             updateCartBadge();
         };
     }
+}
+
+/* adjusts qty or removes items inside the dynamic cart list */
+function adjustCartQty(index, change) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (!cart[index]) return;
+
+    cart[index].qty += change;
+
+    if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCartPage();
+    updateCartBadge();
+    renderCheckoutRecommendations();
 }
 
 /* custom notifications when item is successfully added with dynamic text injections */

@@ -2,10 +2,7 @@
 
 TODO: 
 important
-- padding for search page 
-- if not scrolled to top, quick add has a very quick notification banner. odd.
-- cart layout 
-    - individual clear item button 
+- cart page recommandations click but only after reload... and don't look the same as the search page ...?
 - search nav icon on the left of the nav bar
 
 - product detail layout 
@@ -21,7 +18,7 @@ not as important (if there is time)
 - image quality 
 - cremie red like banner (call to action)
 - progressive disclosure 
-- focus on 2 core colours (current green & pink, grey as undertone)
+- if not scrolled to top, quick add has a very quick notification banner. odd.
 - cart if same item added more than once on different occasions, then increase count (right now show duplicates?)
 
 REPORT
