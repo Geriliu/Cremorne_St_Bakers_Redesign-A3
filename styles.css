@@ -403,7 +403,7 @@ nav a,
 /* product detail -------------------------------------------------------------- */
 .detail-main {
     padding: 25px 0px 0px 0px;
-    margin-top: 50px; /* remove negative pull up so it safely clears the header flow */
+    margin-top: 85px; /* remove negative pull up so it safely clears the header flow */
     position: relative;
     z-index: 1000; /* keep interactive above so they are clickable */
 }
