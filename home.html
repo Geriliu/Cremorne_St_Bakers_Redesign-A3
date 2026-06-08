@@ -41,43 +41,23 @@
         </div>
     </nav>
     
-    <!-- <section class="hero">
-        <img src="assets/images/home-hero.svg" alt="Cremorne Street Bakers Hero" class="hero-image">
-    </section> -->
-    
-    <main>
-        <section class="home-hero-wrap" aria-label="Featured">
-            <div class="home-hero-inner">
-                <div class="home-hero-headline">
-                    <h1>Everyone wants a slice of Delicious</h1>
-                    <a class="btn-pink" href="search.html?q=cake">Shop now <span aria-hidden="true">→</span></a>
-                </div>
-            </div>
-        </section>
+<main class="home-main">
+    <section class="hero-container">
+        <div class="hero-text-content">
+            <h1>Everyone wants a slice of Delicious</h1>
+            <a href="all_products.html" class="btn-shop-now">
+                Shop now <img src="assets/icons/arrow-right.svg" alt="">
+            </a>
+        </div>
+        <div class="hero-wave-wrapper">
+            <img src="assets/images/home-hero.svg" alt="" class="hero-wave-img">
+        </div>
+    </section>
 
-        <section class="cremie-panel" id="cremie" aria-label="Cremie, your GenAI assistant">
-            <img src="assets/icons/just-cremie.svg" width="400" height="200" alt="Cremie assistant">
-
-            <div class="cremie-card">
-                <div class="cremie-pills">
-                    <button type="button" class="cremie-pill" data-cremie-pill="berry">Something with berry</button>
-                    <button type="button" class="cremie-pill" data-cremie-pill="bestsellers">Bestselling cakes</button>
-                    <button type="button" class="cremie-pill" data-cremie-pill="decorations">Decorations</button>
-                </div>
-
-                <!-- currently nothing happens onclick -->
-                <form class="cremie-form" id="cremieForm" method="get">  
-                    <label for="cremieInput" class="visually-hidden">Ask Cremie</label>
-                    <input class="cremie-input" id="cremieInput" name="q" type="search" placeholder="Something with berry?" autocomplete="off">
-                    <button type="submit" class="cremie-send" aria-label="Send">
-                        <!-- placeholder - haven't imported button yet -->
-                    </button>
-                </form>
-
-                <div class="cremie-reply cremie-reply--hidden" id="cremieReply" role="status"></div>
-            </div>
-        </section>
-    </main>
+    <button class="cremie-bubble-btn" id="cremieToggle" aria-label="Toggle chat">
+        <img src="assets/icons/cremie-suggest.svg" alt="Chat to Cremie" id="cremieIcon">
+    </button>
+</main>
 
 
 

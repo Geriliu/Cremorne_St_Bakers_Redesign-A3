@@ -13,7 +13,6 @@ important
 - consistent text colour 
 - longer description on product_detail.html 
 - nav bar white text? 
-- switch back button & shipping banner (more intuitive)
 
 FOR DESKTOP: 
 - scale up red cart badge

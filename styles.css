@@ -467,16 +467,20 @@ nav a,
     margin-bottom: 20px;
 }
 
-/* cremie (static) */
-.cremie-bubble {
+.cremie-bubble-btn {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    width: 180px;
-    z-index: 2000; /* above everything else */
+    width: 180px; 
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 5000; /* stays on top of page layer */
 }
 
-.cremie-bubble img {
+.cremie-bubble-btn img {
     width: 100%;
     height: auto;
     display: block;
