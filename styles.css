@@ -25,7 +25,7 @@ h1, h2, h3, .product-title, .product-price {
 }
 
 body { 
-    margin: 0px 0px 100px 0px;
+    margin: 0;
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
@@ -39,6 +39,10 @@ body {
 
 main {
     margin-top: 130px; /* prevents fixed nav from overlapping with headers */
+    min-height: calc(100vh - 130px);
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* nav bar ----------------------------------------------------------------- */
@@ -153,19 +157,15 @@ nav a,
 
 .home-page main {
     margin-top: 0; 
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 100vh;
-    max-height: 100vh;
-    overflow: hidden !important;
+    min-height: 100vh;
 }
 
 .hero-container {
     display: flex;
     position: relative;
-    height: 100vh; 
+    min-height: 100vh; 
     width: 100%;
 }
 
@@ -229,7 +229,7 @@ nav a,
 /* chatbot frame */
 .cremie-bubble-btn {
     position: fixed;
-    bottom: 70px !important; /* lifted up so doesn't block/cover footer text */
+    bottom: 95px !important; /* shifted up from 70px to give it breathing room above the newly stacked layout */
     left: 5%;
     width: 90vw !important; /* uses more width on mobile for clear visibility */
     max-width: 360px;
@@ -250,19 +250,21 @@ nav a,
 
 /* footer -------------------------------------------------------------------------------- */
 .home-footer {
-    position: fixed;  /* doesn't move with scroll */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px 20px;
-    z-index: 20; /* over the hero image */
+    position: static; 
+    width: calc(100% + 10px); 
+    margin-left: -5px; 
+    margin-right: -5px;
+    padding: 15px 20px 4px 20px;
+    z-index: 20;
     background-color: #4a4a4a;
+    margin-top: auto; 
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; 
+    align-items: flex-start; /* aligns all elements flush left */
+    gap: 15px; 
     max-width: 100%;
 }
 
@@ -276,7 +278,15 @@ nav a,
 
 .footer-links {
     display: flex;
-    gap: 15px;
+    flex-direction: column;
+    gap: 5px;
+    order: 1; 
+}
+
+.footer-content p {
+    order: 2; /* copyright text down to the very bottom line */
+    font-size: 9px !important; /* shrinks the disclaimer font size down to look smaller */
+    opacity: 0.8;
 }
 
 .footer-links a:hover {
@@ -334,6 +344,7 @@ nav a,
 /* search page ------------------------------------------------------------- */
 .search-main { 
     padding: 0px 5px;  
+    flex: 1;
 }
 
 .search-container {
