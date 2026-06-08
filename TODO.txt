@@ -3,7 +3,6 @@
 TODO: 
 important
 - product detail, cremie is meant to be above footer
-- 'shop now' needs to lead to search page, products page not implemented yet 
 - cart page recommandations click but only after reload... and don't look the same as the search page ...?
 - search nav icon on the left of the nav bar
 - nav bar doesnt *completely* stay in place when scrolling
