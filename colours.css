@@ -31,6 +31,15 @@ nav {
     color: #ffffff !important;
 }
 
+/* home page--------------------------------------------------------------------------------- */
+.hero-text-content h1 {
+    background-color: #4a4a4a;
+}
+
+.home-page h1 { 
+    color: #F1E9D2;
+}
+
 /* successful add to cart notif ------------------------------------------------------------- */
 /* colour override for custom notif container and text */
 .cart-notification-banner {
@@ -84,8 +93,8 @@ nav {
     color: #585858;
 }
 
-.product-header {
-    border-top: 0.5px solid #1A1A1A;
+.product-subtitle {
+    color: #585858;
 }
 
 .add-cart-button {
@@ -161,4 +170,35 @@ main .size-options span.selected {
 /* checkout ------------------------------------------------------------ */
 .checkout-sticky-footer {
     background-color: #4a4a4a;
+}
+
+/* footer ----------------------------------------------------------------- */
+.footer-content p, 
+.footer-links a,
+.footer-links a:visited {
+    color: #ffffff !important; /* links stay white after clicked */
+}
+
+/* ALL DESKTOP -------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+    .product-card {
+        box-shadow: -6px 6px 6px #C7C7C7;
+    }
+    .product-card:hover {
+        box-shadow: -12px 12px 20px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* restoration hooks */
+.btn-shop-now {
+    background-color: #D85D75;
+    color: #ffffff;
+}
+
+.home-footer {
+    background-color: #4a4a4a;
+}
+
+.qty-stepper {
+    border-color: #999999;
 }
