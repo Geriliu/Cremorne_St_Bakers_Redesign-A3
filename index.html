@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="home-page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Source+Sans+3:wght@40;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="colours.css">
+    <link rel="stylesheet" href="styles.css">
+    <title> Bakers Melbourne | Wholesale Bakery | Gourmet Cakes Supplier - Cremorne Street Bakers </title>
+</head>
+
+<body class="home-page">
+    <div id="cartNotification" class="cart-notification-banner">
+        <div class="notification-content">
+            <img src="assets/icons/success-add-tick.svg" alt="Successfully added item/s to cart" class="notification-icon">
+            <span id="notificationText">Item added to Cart!</span>
+        </div>
+    </div>
+    <nav>
+        <div class="nav-content">
+            <a href="home.html"><img src="assets/images/CSB.svg" alt="Cremorne Street Bakers" class="nav-logo"></a>
+            <div class="nav-items">
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="all_products.html">All products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <a href="search.html" class="nav-icon" aria-label="Search"><img src="assets/icons/search-nav-icon.svg" alt=""></a>
+                <a href="cart.html" class="nav-icon" aria-label="Shopping cart">
+                    <img src="assets/icons/cart-nav-icon.svg" alt="">
+                    <span class="cart-badge" data-cart-badge>0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="home-main">
+        <section class="hero-container">
+            <div class="hero-text-content">
+                <h1>Everyone wants a slice of Delicious</h1>
+                <a href="search.html" class="btn-shop-now">Shop now <img src="assets/icons/shop-now-arrow.svg" alt=""></a>
+            </div>
+            <div class="hero-wave-wrapper">
+                <img src="assets/images/home-hero.svg" alt="" class="hero-wave-img">
+            </div>
+        </section>
+    </main>
+
+    <button class="cremie-bubble-btn" id="cremieToggle" aria-label="Toggle chat">
+        <img src="assets/icons/cremie-suggest.svg" alt="Chat to Cremie" id="cremieIcon">
+    </button>
+
+    <footer class="home-footer">
+        <div class="footer-content">
+            <p>© 2026 Cremorne Street Bakers. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">Our Story</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
