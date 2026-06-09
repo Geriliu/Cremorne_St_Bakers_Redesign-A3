@@ -712,7 +712,37 @@ nav a,
 }
 
 /* cart page ---------------------------------------------------------------------- */
-/* footer wave */
+body.cart-page main {
+    padding-bottom: 0 !important;
+}
+
+.cart-main h1 {
+    padding: 0 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* item counter header line */
+.cart-main div[style*="border-bottom"], 
+.cart-main > div {
+    padding: 0 0px 10px 0px;
+}
+/* only for the cart page */
+body.cart-page .cart-footer-wave {
+    margin-top: 0 !important;
+    padding-top: 20px; 
+}
+
+body.cart-page .subtotal-row {
+    margin-bottom: 30px; 
+}
+
+body.cart-page .cart-nav-actions {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* footer wave - in general */
 .cart-footer-wave {
     background-image: url('assets/images/cart-footer-background-wave.svg');
     background-size: 100% 100%;
@@ -744,14 +774,14 @@ nav a,
 }
 
 .fulfillment-panel {
-    padding: 10px 20px 40px 20px;
+    padding: 10px 20px 0px 20px;
 }
 
 .fulfillment-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 .toggle-group {
@@ -784,7 +814,7 @@ nav a,
     align-items: center;
     gap: 15px; /* clean spacing so buttons don't touch */
     width: 100%;
-    padding: 0 10px;
+    padding: 0 10px 0px 10px !important;
 }
 
 .btn-continue-shopping,
@@ -807,22 +837,32 @@ nav a,
 }
 
 /* cart item layouts ------------------------------------------------------------------- */
+/* Cart page item wrappers */
 .cart-items-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-bottom: 25px;
+    padding: 15px 20px;
 }
 
 .cart-item-card {
+    flex: 0 0 95%;
+    height: 175px;
     display: flex;
-    gap: 15px;
-    padding-bottom: 20px;
+    flex-direction: row; /* image on left, text on right */
+    gap: 20px;
+    padding: 15px;
+    position: relative;
+    border-radius: 8px;
+    border-bottom: 1px solid #dcd1be;
+    align-items: stretch; /* Stretches details container to match image height */
+    width: 100%;
 }
 
 .cart-item-img {
-    width: 90px;
-    height: 90px;
+    width: 40%;
+    height: fit-content;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 4px;
 }
@@ -831,51 +871,117 @@ nav a,
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* Flings header to top and footer to bottom */
+    max-height: 100%;
 }
 
 .cart-item-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    width: 100%;
+}
+
+.cart-item-header > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .cart-item-title {
-    margin: 0;
+    margin: 0 !important;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .cart-item-variant {
-    margin: 2px 0 0 0;
-    font-size: 13px;
-}
-
-.cart-item-clear-btn {
-    background: none;
-    border: none;
+    margin: 0;
     font-size: 14px;
-    text-decoration: underline;
-    cursor: pointer;
-    padding: 0;
+    color: #585858;
 }
 
+/* Aligns the price and stepper row flat on the bottom line */
 .cart-item-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     margin-top: auto;
-    padding-top: 8px;
+    padding-top: 5px;
 }
 
 .cart-item-price {
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin: 0;
 }
 
 .cart-item-note-link {
     font-size: 13px;
     text-decoration: underline;
-    margin-top: 6px;
+    color: #585858;
+    margin-top: 4px;
     display: inline-block;
+}
+
+#clearCartButton,
+.cart-item-clear-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #585858;
+}
+
+.cart-item-clear-btn {
+    margin-left: auto;
+}
+
+/* cart page layout fixes and spacing overrides */
+body.cart-page main {
+    padding-bottom: 0 !important;
+}
+
+body.cart-page .cart-summary {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+body.cart-page .footer-wave-content {
+    padding-top: 5px !important;
+}
+
+body.cart-page .fulfillment-panel {
+    margin-top: 35px !important;
+    padding-bottom: 0px !important;
+}
+
+body.cart-page .fulfillment-row {
+    margin-bottom: 10px !important;
+}
+
+body.cart-page .cart-footer-wave {
+    margin-top: 0 !important;
+    padding-top: 60px !important; 
+    padding-bottom: 20px !important; 
+    height: auto !important;
+}
+
+body.cart-page .cart-nav-actions {
+    margin-bottom: 0 !important;
+    padding-bottom: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+body.cart-page .cremie-container {
+    bottom: 260px !important; 
 }
 
 /* checkout page ----------------------------------------------------------------- */
