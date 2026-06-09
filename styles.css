@@ -577,13 +577,18 @@ nav a,
 }
 
 .back-link {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* space between arrow and text */
+    text-decoration: none;
+    font-size: 16px;
     padding: 15px 20px;
 }
 
 .back-link img {
-    width: 24px;
+    width: 16px; 
     height: auto;
+    display: block;
 }
 
 .detail-images {
@@ -984,9 +989,12 @@ nav a,
 .checkout-form select {
     width: 100%;
     padding: 12px;
+    border: 1px solid #dcd1be; /* same outline weight */
     border-radius: 4px;
     font-family: 'Source Sans 3', sans-serif;
     font-size: 14px;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .input-icon-wrap {
@@ -1058,7 +1066,44 @@ nav a,
     cursor: pointer;
 }
 
+/* confirmation ---------------------------------------------------------------------- */
+.confirmation-main {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100vh - 180px);
+}
 
+.confirmation-content {
+    margin-top: 60px;
+}
+
+.confirmation-title {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    font-size: 32px;
+    line-height: 1.6; 
+    display: inline;
+    padding: 10px 15px; /* more padding width & height inside green block */
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.confirmation-message {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 50px;
+    margin-bottom: 12px;
+}
+
+.confirmation-submessage {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
 
 /* ALL DESKTOP -------------------------------------------------------------------- */
 @media (min-width: 1024px) {    

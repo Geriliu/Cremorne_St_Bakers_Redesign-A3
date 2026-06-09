@@ -179,6 +179,24 @@ main .size-options span.selected {
     color: #ffffff !important; /* links stay white after clicked */
 }
 
+/* confirmation --------------------------------------------------------------- */
+.confirmation-title {
+    background-color: #14AC86;
+    color: #1A1A1A;
+}
+
+.confirmation-message {
+    color: #585858;
+}
+
+.confirmation-submessage {
+    color: #8d8d8d;
+}
+
+.back-link {
+    color: #1A1A1A;
+}
+
 /* ALL DESKTOP -------------------------------------------------------------------- */
 @media (min-width: 1024px) {
     .product-card {
