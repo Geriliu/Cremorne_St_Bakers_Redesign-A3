@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- fonts used in css -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Source+Sans+3:wght@40;600&display=swap" rel="stylesheet">
@@ -16,7 +15,6 @@
 <body>
     <nav>
         <div class="nav-content">
-            <!-- logo is different alignment from other nav items, so separated -->
             <a href="home.html"><img src="assets/images/CSB.svg" alt="Cremorne Street Bakers" class="nav-logo"></a>
             <div class="nav-items">
                 <div class="nav-links">
@@ -26,9 +24,7 @@
                         <li><a href="about.html">About</a></li>
                     </ul>
                 </div>
-                <!-- search icon first -->
                 <a href="search.html" class="nav-icon" aria-label="Search"><img src="assets/icons/search-nav-icon.svg" alt=""></a>
-                <!-- cart icon on the very right -->
                 <a href="cart.html" class="nav-icon" aria-label="Shopping cart">
                     <img src="assets/icons/cart-nav-icon.svg" alt="">
                     <span class="cart-badge" data-cart-badge>0</span>
@@ -53,7 +49,6 @@
             <div id="cartItemsList" class="cart-items-container"></div>
         </div>
 
-        <!-- recommandations at the top of page, based on what user has added to cart -->
         <section class="product-preview">
             <h2>You might also like...</h2>
             <div class="product-grid" id="checkoutRecommendations">
@@ -81,7 +76,6 @@
                     </div>
                     
                     <div class="datetime-pills">
-                        <!-- static dates & times -->
                         <span class="datetime-pill">Apr 1, 2025</span>
                         <span class="datetime-pill">9:41 AM</span>
                     </div>
@@ -97,8 +91,13 @@
                 </div>
             </div>
         </div>
+    </main>
 
-        <footer class="home-footer">
+    <div class="cremie-bubble">
+        <img src="assets/icons/just-cremie.svg" alt="Chat to Cremie">
+    </div>
+
+    <footer class="home-footer">
         <div class="footer-content">
             <p>© 2026 Cremorne Street Bakers. All rights reserved.</p>
             <div class="footer-links">
@@ -107,8 +106,6 @@
             </div>
         </div>
     </footer>
-    
-    </main>
 
     <script src="script.js"></script>
 </body>
