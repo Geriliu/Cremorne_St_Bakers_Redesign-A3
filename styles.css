@@ -225,8 +225,7 @@ nav a,
 }
 
 /* for Cremie across ALL pages */
-.cremie-bubble,
-.cremie-bubble-btn {
+.cremie-container {
     position: fixed;
     bottom: 95px !important; 
     left: 5%;
@@ -236,26 +235,24 @@ nav a,
     margin: 0;
     cursor: pointer;
     z-index: 5000;
-    display: block;
+    transition: width 0.3s ease; /* smooth snapping window transition */
 }
 
-/* imgs */
-.cremie-bubble img,
-.cremie-bubble-btn img {
-    width: 100% !important;
-    height: auto;
-    display: block;
+/* default state: mini */
+.cremie-container {
+    width: 70px !important;
 }
 
-/* expanded cremie (on home page) */
-.cremie-bubble-btn {
+/* expanded chat window */
+.cremie-container.is-expanded {
     width: 90vw !important; 
     max-width: 360px;
 }
 
-/* just-cremie shrunk version - all other pages as default */
-.cremie-bubble {
-    width: 70px !important;
+.cremie-container img {
+    width: 100% !important;
+    height: auto;
+    display: block;
 }
 
 /* footer -------------------------------------------------------------------------------- */

@@ -1,9 +1,6 @@
-- live website link - google
-
 TODO: 
 important
-- cremie on all pages 
-- cart page recommandations click but only after reload... and don't look the same as the search page ...?
+- home page and all cremies should be interchangeable between those 2 states
 - search nav icon on the left of the nav bar
 - nav bar doesnt *completely* stay in place when scrolling
 

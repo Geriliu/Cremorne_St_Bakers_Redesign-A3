@@ -408,6 +408,30 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+/* cremie toggle on all pages 
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const cremieWidget = document.getElementById('cremieWidget');
+    
+    if (cremieWidget) {
+        cremieWidget.onclick = (event) => {
+            // stop click events from bubbling 
+            event.stopPropagation();
+            
+            // toggle the visual state class
+            cremieWidget.classList.toggle('is-expanded');
+            
+            // img swapping depending on active state class
+            const cremieImg = cremieWidget.querySelector('img');
+            if (cremieWidget.classList.contains('is-expanded')) {
+                cremieImg.src = 'assets/icons/cremie-suggest.svg';
+            } else {
+                cremieImg.src = 'assets/icons/just-cremie.svg';
+            }
+        };
+    }
+});
+
 /* updates the small red counter badge on cart icon
 */
 function updateCartBadge() {
