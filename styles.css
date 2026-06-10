@@ -1249,6 +1249,28 @@ body.cart-page .cremie-container {
         right: 55px; 
     }
 
+    /* home ----------------------------------------------------- */
+    .hero-text-content h1 {
+        font-size: calc(32px + 2vw) !important;
+    }
+
+    .btn-shop-now {
+        padding: 16px 32px !important;
+        font-size: 20px !important;
+        border-radius: 30px !important;
+    }
+
+    .btn-shop-now img {
+        width: 24px !important;
+    }
+
+    /* cremie --------------------------------------------------- */
+    .cremie-container {
+        width: 95px !important;
+        bottom: 80px !important;
+        left: 5% !important;
+    }
+
     /* search -------------------------------------------------- */
 
     .search-main {
@@ -1295,5 +1317,32 @@ body.cart-page .cremie-container {
     .add-cart-button img {
         width: 50px !important; 
         height: 50px !important;
+    }
+
+    /* headings bigger */
+    .search-main h3, .search-main h2 {
+        font-size: 35px !important;
+        padding-left: 40px !important;
+        margin-top: 0px !important;
+    }
+
+    /* search bar */
+    .search-box {
+        margin-top: 100px !important;
+    }
+
+    .search-filters {
+        margin-top: 60px !important;
+    }
+
+    .filter-pill {
+        padding: 8px 18px !important;
+        font-size: 16px !important;
+    }
+
+    /* when seaching...images are too large */
+    .search-main .product-grid.search-mode .product-card img {
+        width: 25% !important;
+        max-width: 180px !important;
     }
 }

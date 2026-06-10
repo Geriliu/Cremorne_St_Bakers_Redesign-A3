@@ -10,11 +10,12 @@ important
 - nav bar white text? 
 
 FOR DESKTOP: 
-- home page hero text delicious should be larger, as well as the shop now button
-- cremie (just-cremie) on all pages to be a bit bigger not too big just the normal chatbox widget size
-- search page the headings (a peek at our bestsellers and the cakes, lite bites, etc) to be larger
-- search bar moved down as well as filter pills
-- when searching it goes into one vertical column of the results that match with the string- the pictures from THOSE are too large inside the horizontal product cards, scale those down
+- toggle cremie also has to match that size
+- search page the headings (a peek at our bestsellers and the cakes, lite bites, etc) to be larger - untarget the inside of product card 
+- details on product cards made larger/readable
+- search box expanded to fill across width, filter pills made a bit bigger
+- quick add to cart button when active search state is wayyy too small
+
 - product detail, image is also too large and shipping banner and back button both need to be moved down because they're under the nav bar
 - product detail's detail text needs to be larger so more readable
 - added to cart notification should be on the top right corner (right now for desktop it comes up in the center)
