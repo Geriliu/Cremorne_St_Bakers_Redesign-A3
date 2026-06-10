@@ -1271,6 +1271,17 @@ body.cart-page .cremie-container {
         left: 5% !important;
     }
 
+    .cremie-container.is-expanded {
+        width: 360px !important;
+    }
+
+    .cremie-container.is-expanded img,
+    .cremie-container img[src*="chat"],
+    .cremie-container img[src*="expanded"] {
+        width: 100% !important;
+        height: auto !important;
+    }
+
     /* search -------------------------------------------------- */
 
     .search-main {
@@ -1305,8 +1316,10 @@ body.cart-page .cremie-container {
         font-size: 20px; /* Scaled price */
     }
 
+    /* card description and ingredients made larger and more readable */
     .product-description, .product-ingredients {
-        font-size: 14px; /* Scaled text */
+        font-size: 14px !important;
+        line-height: 1.4 !important;
     }
 
     .product-sizes span {
@@ -1314,30 +1327,45 @@ body.cart-page .cremie-container {
         padding: 4px 12px;
     }
 
+    /* active search state quick add icon resizer */
     .add-cart-button img {
         width: 50px !important; 
         height: 50px !important;
     }
 
-    /* headings bigger */
-    .search-main > h3, .search-main > h2 {
+    /* main outside headings untargeted from inner product cards */
+    .search-main > h3, .search-main > h2, .product-preview > h2 {
         font-size: 35px !important;
         padding-left: 40px !important;
-        margin-top: 0px !important;
+        margin-top: 40px !important;
+        margin-bottom: 20px !important;
     }
 
-    /* search bar */
+    /* search box expanded to stretch across screen wide width */
     .search-box {
+        width: 80vw !important;
+        max-width: 900px !important;
         margin-top: 100px !important;
+        padding: 10px 20px !important;
     }
 
+    #searchInput {
+        font-size: 22px !important;
+    }
+
+    /* filter pills padded and expanded */
     .search-filters {
         margin-top: 60px !important;
+        gap: 24px !important;
     }
 
     .filter-pill {
-        padding: 8px 18px !important;
-        font-size: 16px !important;
+        padding: 10px 24px !important;
+        font-size: 18px !important;
+    }
+
+    .filter-pill span {
+        font-size: 15px !important;
     }
 
     /* when seaching...images are too large */
@@ -1359,18 +1387,20 @@ body.cart-page .cremie-container {
     }
 
     /* product detail ------------------------------------------------ */
+    /* elements shifted down past nav layout bounds line */
     .detail-main {
-        margin-top: 140px !important;
+        margin-top: 180px !important;
     }
 
+    /* image centered and scaled accurately */
     .detail-images {
         justify-content: center !important;
         padding: 0 40px 40px 40px !important;
     }
 
     .detail-images img {
-        width: 45% !important;
-        max-width: 500px !important;
+        width: 35% !important;
+        max-width: 450px !important;
     }
 
     #productName {
@@ -1381,22 +1411,37 @@ body.cart-page .cremie-container {
         font-size: 35px !important;
     }
 
+    /* product item text detail readability boost */
     #productDescription {
         font-size: 20px !important;
+        line-height: 1.6 !important;
+        max-width: 800px !important;
     }
 
     /* cart --------------------------------------------------------------- */
+    /* item rows thumbnail dimensions contained */
+    .cart-item-card {
+        max-width: 800px !important;
+        margin: 0 auto !important;
+    }
+
     .cart-item-img {
         width: 120px !important;
         height: 120px !important;
     }
 
+    /* forces the wave to break out of parent container constraints */
     body.cart-page .cart-footer-wave {
-        width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        right: 50% !important;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
         background-size: 100% 100% !important;
         background-position: bottom center !important;
+        padding-top: 80px !important;
+        padding-bottom: 40px !important;
     }
 
     /* checkout ------------------------------------------------------------ */

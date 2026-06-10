@@ -10,7 +10,7 @@ important
 - nav bar white text? 
 
 FOR DESKTOP: 
-- toggle cremie also has to match that size
+
 - search page the headings (a peek at our bestsellers and the cakes, lite bites, etc) to be larger - untarget the inside of product card 
 - details on product cards made larger/readable
 - search box expanded to fill across width, filter pills made a bit bigger
