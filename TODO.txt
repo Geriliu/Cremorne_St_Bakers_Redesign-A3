@@ -21,8 +21,7 @@ FOR DESKTOP:
 - added to cart notification should be on the top right corner (right now for desktop it comes up in the center)
 - cart images are also too big need to be scaled down for each item in there
 - the wave at the bottom of the cart page does not stretch to the entire width
-- checkout forms should be larger thus more readable on desktop
-- confirm.html also needs larger text
+
 - scale up red cart badge
 
 

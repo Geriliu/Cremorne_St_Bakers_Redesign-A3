@@ -1320,7 +1320,7 @@ body.cart-page .cremie-container {
     }
 
     /* headings bigger */
-    .search-main h3, .search-main h2 {
+    .search-main > h3, .search-main > h2 {
         font-size: 35px !important;
         padding-left: 40px !important;
         margin-top: 0px !important;
@@ -1363,6 +1363,11 @@ body.cart-page .cremie-container {
         margin-top: 140px !important;
     }
 
+    .detail-images {
+        justify-content: center !important;
+        padding: 0 40px 40px 40px !important;
+    }
+
     .detail-images img {
         width: 45% !important;
         max-width: 500px !important;
@@ -1384,5 +1389,41 @@ body.cart-page .cremie-container {
     .cart-item-img {
         width: 120px !important;
         height: 120px !important;
+    }
+
+    body.cart-page .cart-footer-wave {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        background-size: 100% 100% !important;
+        background-position: bottom center !important;
+    }
+
+    /* checkout ------------------------------------------------------------ */
+    .checkout-form input, .checkout-form select {
+        padding: 16px !important;
+        font-size: 20px !important;
+    }
+
+    .section-label {
+        font-size: 25px !important;
+    }
+
+    /* confirmation ----------------------------------------------------------- */
+    .confirmation-title {
+        font-size: 44px !important;
+    }
+
+    .confirmation-message {
+        font-size: 25px !important;
+    }
+
+    .confirmation-submessage {
+        font-size: 17px !important;
+    }
+
+    .confirmation-main .btn-shop-now {
+        font-size: 22px !important;
+        padding: 18px 36px !important;
     }
 }
