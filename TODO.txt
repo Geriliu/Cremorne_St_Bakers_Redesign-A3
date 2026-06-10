@@ -1,21 +1,12 @@
 TODO: 
 important
-- home page and all cremies should be interchangeable between those 2 states
 - search nav icon on the left of the nav bar
-- nav bar doesnt *completely* stay in place when scrolling
 
-- product detail layout 
 - consistent text colour 
 - longer description on product_detail.html 
 - nav bar white text? 
 
 FOR DESKTOP: 
-
-
-- product detail, image is also too large and shipping banner and back button both need to be moved down because they're under the nav bar
-- product detail's detail text needs to be larger so more readable
-- added to cart notification should be on the top right corner (right now for desktop it comes up in the center)
-- cart images are also too big need to be scaled down for each item in there
 - the wave at the bottom of the cart page does not stretch to the entire width
 
 
