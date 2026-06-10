@@ -11,18 +11,12 @@ important
 
 FOR DESKTOP: 
 
-- search page the headings (a peek at our bestsellers and the cakes, lite bites, etc) to be larger - untarget the inside of product card 
-- details on product cards made larger/readable
-- search box expanded to fill across width, filter pills made a bit bigger
-- quick add to cart button when active search state is wayyy too small
 
 - product detail, image is also too large and shipping banner and back button both need to be moved down because they're under the nav bar
 - product detail's detail text needs to be larger so more readable
 - added to cart notification should be on the top right corner (right now for desktop it comes up in the center)
 - cart images are also too big need to be scaled down for each item in there
 - the wave at the bottom of the cart page does not stretch to the entire width
-
-- scale up red cart badge
 
 
 not as important (if there is time)

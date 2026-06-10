@@ -1244,10 +1244,16 @@ body.cart-page .cremie-container {
     }
 
     [data-cart-badge] {
+        font-size: 16px !important;
+        min-width: 26px !important;
+        height: 26px !important;
+        padding: 0 6px !important;
+        
         /* manually change coordinates */
-        top: 20px;   
-        right: 55px; 
+        top: 18px !important;   
+        right: 48px !important; 
     }
+    
 
     /* home ----------------------------------------------------- */
     .hero-text-content h1 {
@@ -1384,6 +1390,17 @@ body.cart-page .cremie-container {
 
     .cart-notification-banner.show {
         top: 150px !important;
+    }
+
+    /* quick add button - search results list view */
+    .search-main .product-grid.search-mode .add-cart-button {
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+
+    .search-main .product-grid.search-mode .add-cart-button img {
+        width: 55px !important;
+        height: 55px !important;
     }
 
     /* product detail ------------------------------------------------ */
